@@ -9,6 +9,7 @@ black = "==21.6b0"
 
 [packages]
 pytest = "*"
+invoke = "*"
 
 [requires]
 python_version = "3.8"
