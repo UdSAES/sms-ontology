@@ -12,10 +12,23 @@
 #    Object Properties
 #################################################################
 
+###  https://ontologies.msaas.me/ms-aas-ontology.ttl#hasParameter
+:hasParameter rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              owl:inverseOf :parameterOf ;
+              rdfs:comment "The subject has a parameter of type object."@en .
+
+
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#hasProperty
 :hasProperty rdf:type owl:ObjectProperty ;
              owl:inverseOf :propertyOf ;
              rdfs:comment "The subject has the characteristic identified by the object."@en .
+
+
+###  https://ontologies.msaas.me/ms-aas-ontology.ttl#parameterOf
+:parameterOf rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:comment "The subject is a parameter of the object."@en .
 
 
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#propertyOf
@@ -64,6 +77,37 @@
                                      owl:allValuesFrom :System
                                    ] ;
                rdfs:comment "A unambiguous representation of knowledge about a specific systems;  i.e. a model where all parameters are set."@en .
+
+
+###  https://ontologies.msaas.me/ms-aas-ontology.ttl#ModelParameter
+:ModelParameter rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                      owl:onProperty :parameterOf ;
+                                      owl:allValuesFrom [ rdf:type owl:Class ;
+                                                          owl:unionOf ( :Model
+                                                                        :ModelInstance
+                                                                      )
+                                                        ]
+                                    ] ;
+                rdfs:comment "A model parameter, corresponding to a system property."@en .
+
+
+###  https://ontologies.msaas.me/ms-aas-ontology.ttl#ModelParameterDefault
+:ModelParameterDefault rdf:type owl:Class ;
+                       rdfs:subClassOf :ModelParameter ;
+                       rdfs:comment "A parameter of a model or model instance that has a valid default value."@en .
+
+
+###  https://ontologies.msaas.me/ms-aas-ontology.ttl#ModelParameterFree
+:ModelParameterFree rdf:type owl:Class ;
+                    rdfs:subClassOf :ModelParameter ;
+                    rdfs:comment "A parameter of a model that is not set yet, i.e. has no value."@en .
+
+
+###  https://ontologies.msaas.me/ms-aas-ontology.ttl#ModelParameterNonFree
+:ModelParameterNonFree rdf:type owl:Class ;
+                       rdfs:subClassOf :ModelParameter ;
+                       rdfs:comment "A parameter of a model or model instance that has its value set to a valid value."@en .
 
 
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#System
