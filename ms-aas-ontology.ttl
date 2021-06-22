@@ -15,26 +15,26 @@
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#hasParameter
 :hasParameter rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf owl:topObjectProperty ;
-              owl:inverseOf :parameterOf ;
+              owl:inverseOf :isParameterOf ;
               rdfs:comment "The subject has a parameter of type object."@en .
 
 
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#hasProperty
 :hasProperty rdf:type owl:ObjectProperty ;
-             owl:inverseOf :propertyOf ;
+             owl:inverseOf :isPropertyOf ;
              rdfs:comment "The subject has the characteristic identified by the object."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#parameterOf
-:parameterOf rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf owl:topObjectProperty ;
-             rdfs:comment "The subject is a parameter of the object."@en .
+###  https://ontologies.msaas.me/ms-aas-ontology.ttl#isParameterOf
+:isParameterOf rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:comment "The subject is a parameter of the object."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#propertyOf
-:propertyOf rdf:type owl:ObjectProperty ;
-            rdfs:subPropertyOf owl:topObjectProperty ;
-            rdfs:comment "The subject is a (static/design-time) property of the object."@en .
+###  https://ontologies.msaas.me/ms-aas-ontology.ttl#isPropertyOf
+:isPropertyOf rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:comment "The subject is a (static/design-time) property of the object."@en .
 
 
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#realizedBy
