@@ -37,6 +37,17 @@
             rdfs:comment "The subject is a (static/design-time) property of the object."@en .
 
 
+###  https://ontologies.msaas.me/ms-aas-ontology.ttl#realizedBy
+:realizedBy rdf:type owl:ObjectProperty ;
+            owl:inverseOf :realizes ;
+            rdfs:comment "The subject is realized by the object."@en .
+
+
+###  https://ontologies.msaas.me/ms-aas-ontology.ttl#realizes
+:realizes rdf:type owl:ObjectProperty ;
+          rdfs:comment "The subject realizes the object."@en .
+
+
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#representedBy
 :representedBy rdf:type owl:ObjectProperty ;
                owl:inverseOf :represents ;
