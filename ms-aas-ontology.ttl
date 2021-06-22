@@ -28,12 +28,14 @@
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#isParameterOf
 :isParameterOf rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain :ModelParameter ;
                rdfs:comment "The subject is a parameter of the object."@en .
 
 
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#isPropertyOf
 :isPropertyOf rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain :SystemProperty ;
               rdfs:comment "The subject is a (static/design-time) property of the object."@en .
 
 
