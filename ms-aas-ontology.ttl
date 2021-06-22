@@ -80,18 +80,24 @@
 
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#ModelParameter
 :ModelParameter rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Class ;
+                                      owl:unionOf ( :ModelParameterFree
+                                                    :ModelParameterNonFree
+                                                  )
+                                    ] ;
                 rdfs:comment "A model parameter, corresponding to a system property."@en .
 
 
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#ModelParameterDefault
 :ModelParameterDefault rdf:type owl:Class ;
-                       rdfs:subClassOf :ModelParameter ;
+                       rdfs:subClassOf :ModelParameterNonFree ;
                        rdfs:comment "A parameter of a model or model instance that has a valid default value."@en .
 
 
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#ModelParameterFree
 :ModelParameterFree rdf:type owl:Class ;
                     rdfs:subClassOf :ModelParameter ;
+                    owl:disjointWith :ModelParameterNonFree ;
                     rdfs:comment "A parameter of a model that is not set yet, i.e. has no value."@en .
 
 
