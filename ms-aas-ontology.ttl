@@ -12,6 +12,17 @@
 #    Object Properties
 #################################################################
 
+###  https://ontologies.msaas.me/ms-aas-ontology.ttl#approximatedBy
+:approximatedBy rdf:type owl:ObjectProperty ;
+                owl:inverseOf :approximates ;
+                rdfs:comment "The subject is approximated by the object."@en .
+
+
+###  https://ontologies.msaas.me/ms-aas-ontology.ttl#approximates
+:approximates rdf:type owl:ObjectProperty ;
+              rdfs:comment "The subject is an approximation of the object."@en .
+
+
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#hasParameter
 :hasParameter rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf owl:topObjectProperty ;
@@ -23,6 +34,12 @@
 :hasProperty rdf:type owl:ObjectProperty ;
              owl:inverseOf :isPropertyOf ;
              rdfs:comment "The subject has the characteristic identified by the object."@en .
+
+
+###  https://ontologies.msaas.me/ms-aas-ontology.ttl#hasSetting
+:hasSetting rdf:type owl:ObjectProperty ;
+            owl:inverseOf :isSettingFor ;
+            rdfs:range :SolverSetting .
 
 
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#isParameterOf
@@ -37,6 +54,11 @@
               rdfs:subPropertyOf owl:topObjectProperty ;
               rdfs:domain :SystemProperty ;
               rdfs:comment "The subject is a (static/design-time) property of the object."@en .
+
+
+###  https://ontologies.msaas.me/ms-aas-ontology.ttl#isSettingFor
+:isSettingFor rdf:type owl:ObjectProperty ;
+              rdfs:range :Solver .
 
 
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#realizedBy
@@ -59,6 +81,28 @@
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#represents
 :represents rdf:type owl:ObjectProperty ;
             rdfs:comment "The subject represents the object."@en .
+
+
+###  https://ontologies.msaas.me/ms-aas-ontology.ttl#resultOf
+:resultOf rdf:type owl:ObjectProperty ;
+          owl:inverseOf :resultsIn ;
+          rdfs:comment "The subject is a result of the object."@en .
+
+
+###  https://ontologies.msaas.me/ms-aas-ontology.ttl#resultsIn
+:resultsIn rdf:type owl:ObjectProperty ;
+           rdfs:comment "The subject results in the object."@en .
+
+
+###  https://ontologies.msaas.me/ms-aas-ontology.ttl#simulatedBy
+:simulatedBy rdf:type owl:ObjectProperty ;
+             owl:inverseOf :simulates ;
+             rdfs:comment "The subject is simulated by the object."@en .
+
+
+###  https://ontologies.msaas.me/ms-aas-ontology.ttl#simulates
+:simulates rdf:type owl:ObjectProperty ;
+           rdfs:comment "The subject simulates the object."@en .
 
 
 #################################################################
