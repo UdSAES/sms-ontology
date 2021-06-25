@@ -20,6 +20,8 @@
 
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#approximates
 :approximates rdf:type owl:ObjectProperty ;
+              rdfs:domain :SimulationResult ;
+              rdfs:range :SystemBehaviour ;
               rdfs:comment "The subject is an approximation of the object."@en .
 
 
@@ -39,18 +41,23 @@
 :hasParameter rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf owl:topObjectProperty ;
               owl:inverseOf :isParameterOf ;
+              rdfs:domain :Model ;
+              rdfs:range :ModelParameter ;
               rdfs:comment "The subject has a parameter of type object."@en .
 
 
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#hasProperty
 :hasProperty rdf:type owl:ObjectProperty ;
              owl:inverseOf :isPropertyOf ;
+             rdfs:domain :ClassOfSystems ;
+             rdfs:range :SystemProperty ;
              rdfs:comment "The subject has the characteristic identified by the object."@en .
 
 
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#hasSetting
 :hasSetting rdf:type owl:ObjectProperty ;
             owl:inverseOf :isSettingFor ;
+            rdfs:domain :Solver ;
             rdfs:range :SolverSetting .
 
 
@@ -103,6 +110,8 @@
 
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#resultsIn
 :resultsIn rdf:type owl:ObjectProperty ;
+           rdfs:domain :Simulation ;
+           rdfs:range :SimulationResult ;
            rdfs:comment "The subject results in the object."@en .
 
 
@@ -114,6 +123,8 @@
 
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#simulates
 :simulates rdf:type owl:ObjectProperty ;
+           rdfs:domain :Simulation ;
+           rdfs:range :ModelInstance ;
            rdfs:comment "The subject simulates the object."@en .
 
 
