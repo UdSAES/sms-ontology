@@ -23,6 +23,18 @@
               rdfs:comment "The subject is an approximation of the object."@en .
 
 
+###  https://ontologies.msaas.me/ms-aas-ontology.ttl#definedBy
+:definedBy rdf:type owl:ObjectProperty ;
+           owl:inverseOf :defines ;
+           rdfs:comment "The subject is (partially) defined by the object."@en .
+
+
+###  https://ontologies.msaas.me/ms-aas-ontology.ttl#defines
+:defines rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdfs:comment "The subject is a defining aspect for the object."@en .
+
+
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#hasParameter
 :hasParameter rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf owl:topObjectProperty ;
