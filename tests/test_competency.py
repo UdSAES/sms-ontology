@@ -9,6 +9,8 @@ import rdflib
 
 
 class TestCompetency(object):
+    ap = "https://ontologies.msaas.me/individuals-test.ttl#"  # prefix for ABox
+
     def test_satisfiability(self, hermit, kb):
         """Verify that the knowledge base is satisfiable/consistent (has a model)."""
 
@@ -23,7 +25,12 @@ class TestCompetency(object):
         assert satisfiable
 
     @pytest.mark.parametrize(
-        "where, expected", [("?i msaas:limitedBy ?o", ["_Quantity01"])]
+        "where, expected",
+        [
+            # Verify that inverse roles work as expected
+            (f"<{ap}_Model01> msaas:instantiatedBy ?i", ["_ModelInstance01"]),
+            (f"?i msaas:instanceOf <{ap}_Model01>", ["_ModelInstance01"]),
+        ],
     )
     def test_instance_retrieval(self, kb, ns_mgr, where, expected):
         """Verify that individuals in ABox are found as expected."""
