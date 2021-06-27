@@ -66,6 +66,8 @@ def ns_mgr():
 
     ns_mgr.bind("rdf", RDF)
     ns_mgr.bind("owl", OWL)
-    ns_mgr.bind("msaas", rdflib.Namespace("https://ontologies.msaas.me/ms-aas-ontology.ttl#"))
+    ns_mgr.bind(
+        "msaas", rdflib.Namespace("https://ontologies.msaas.me/ms-aas-ontology.ttl#")
+    )
 
     return ns_mgr
