@@ -5,6 +5,7 @@
 
 import invoke
 import pytest
+import rdflib
 
 
 class TestCompetency(object):
@@ -20,3 +21,27 @@ class TestCompetency(object):
         )
 
         assert satisfiable
+
+    @pytest.mark.parametrize(
+        "where, expected", [("?i msaas:limitedBy ?o", ["_Quantity01"])]
+    )
+    def test_instance_retrieval(self, kb, ns_mgr, where, expected):
+        """Verify that individuals in ABox are found as expected."""
+
+        # Load knowledge base as graph, using common prefixes via namespace manager
+        graph = rdflib.Graph()
+        graph.namespace_manager = ns_mgr
+        graph.parse(kb, format="turtle")
+
+        # Prepare and execute query
+        query = "SELECT ?i WHERE { " + where + " }"
+        print(f"{query=}")
+
+        answer = graph.query(query)
+
+        actual = []
+        for individual in answer:
+            actual.append(individual)
+            print(f"{individual=}")
+
+        assert [x in actual for x in expected]

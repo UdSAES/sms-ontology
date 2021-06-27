@@ -6,10 +6,23 @@
 import os
 
 import pytest
+import rdflib
+from rdflib.namespace import OWL, RDF, NamespaceManager
 
 
 @pytest.fixture
-def kb(tmp_path):
+def tbox_rbox():
+    """Retrieve the full path to the file defining TBox and RBox."""
+
+    path = os.path.normpath(
+        os.path.join(os.path.dirname(__file__), "..", "ms-aas-ontology.ttl")
+    )
+
+    return path
+
+
+@pytest.fixture
+def kb(tmp_path, tbox_rbox):
     """Retrieve the full path to the file containing the knowledge base (KB)."""
 
     file_name = "individuals.ttl"
@@ -24,7 +37,7 @@ def kb(tmp_path):
         content = fp.read()
 
     content = content.replace(
-        "owl:imports <https://ontologies.msaas.me/ms-aas-ontology.ttl> .",
+        f"owl:imports <https://ontologies.msaas.me/ms-aas-ontology.ttl> .",
         f"owl:imports <file://{tbox_rbox}> .",
     )
 
@@ -43,3 +56,16 @@ def hermit():
     )
 
     return f"java -jar {path}"
+
+
+@pytest.fixture
+def ns_mgr():
+    """Retrieve initialized namespace manager for use with rdflib."""
+
+    ns_mgr = NamespaceManager(rdflib.Graph())
+
+    ns_mgr.bind("rdf", RDF)
+    ns_mgr.bind("owl", OWL)
+    ns_mgr.bind("msaas", rdflib.Namespace("https://ontologies.msaas.me/ms-aas-ontology.ttl#"))
+
+    return ns_mgr
