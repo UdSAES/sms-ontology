@@ -35,13 +35,10 @@ class TestCompetency(object):
 
         # Prepare and execute query
         query = "SELECT ?i WHERE { " + where + " }"
-        print(f"{query=}")
-
         answer = graph.query(query)
 
         actual = []
         for individual in answer:
             actual.append(individual)
-            print(f"{individual=}")
 
-        assert [x in actual for x in expected]
+        assert [x in actual for x in expected] if actual != [] else False
