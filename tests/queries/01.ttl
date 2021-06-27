@@ -1,6 +1,0 @@
-PREFIX msaas: <https://ontologies.msaas.me/ms-aas-ontology.ttl#>
-
-SELECT ?subject ?predicate ?object
-WHERE {
-  ?subject msaas:representedBy ?object
-}
