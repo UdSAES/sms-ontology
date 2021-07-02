@@ -18,15 +18,47 @@
 :_ClassOfSystems01 rdf:type owl:NamedIndividual .
 
 
+###  https://ontologies.msaas.me/individuals-test.ttl#_ClassOfSystems01_Property00
+:_ClassOfSystems01_Property00 rdf:type owl:NamedIndividual ;
+                              msaas:isPropertyOf :_ClassOfSystems01 .
+
+
+###  https://ontologies.msaas.me/individuals-test.ttl#_Context01
+:_Context01 rdf:type owl:NamedIndividual ;
+            msaas:defines :_System01_Behaviour01 .
+
+
+###  https://ontologies.msaas.me/individuals-test.ttl#_InputVektor01
+:_InputVektor01 rdf:type owl:NamedIndividual ;
+                msaas:defines :_Simulation01 ;
+                msaas:represents :_Context01 .
+
+
 ###  https://ontologies.msaas.me/individuals-test.ttl#_Model01
 :_Model01 rdf:type owl:NamedIndividual ;
+          msaas:hasParameter :_Model01_Parameter00 ;
           msaas:represents :_ClassOfSystems01 .
+
+
+###  https://ontologies.msaas.me/individuals-test.ttl#_Model01_Parameter00
+:_Model01_Parameter00 rdf:type owl:NamedIndividual .
+
+
+###  https://ontologies.msaas.me/individuals-test.ttl#_Model01_Parameter00_Constraint01
+:_Model01_Parameter00_Constraint01 rdf:type owl:NamedIndividual ;
+                                   msaas:constrains :_Model01_Parameter00 .
 
 
 ###  https://ontologies.msaas.me/individuals-test.ttl#_ModelInstance01
 :_ModelInstance01 rdf:type owl:NamedIndividual ;
-                  msaas:realizes :_Model01 ;
+                  msaas:instanceOf :_Model01 ;
                   msaas:represents :_System01 .
+
+
+###  https://ontologies.msaas.me/individuals-test.ttl#_ModelInstance01_InitialState01
+:_ModelInstance01_InitialState01 rdf:type owl:NamedIndividual ;
+                                 msaas:defines :_Simulation01 ;
+                                 msaas:represents :_System01_Behaviour01_InitialState01 .
 
 
 ###  https://ontologies.msaas.me/individuals-test.ttl#_ModelInstance01_Parameter01
@@ -34,9 +66,84 @@
                               msaas:isParameterOf :_ModelInstance01 .
 
 
+###  https://ontologies.msaas.me/individuals-test.ttl#_ModelInstance01_Parameter02
+:_ModelInstance01_Parameter02 rdf:type owl:NamedIndividual ,
+                                       msaas:ModelParameterDefault ;
+                              msaas:isParameterOf :_ModelInstance01 .
+
+
+###  https://ontologies.msaas.me/individuals-test.ttl#_Quantity01
+:_Quantity01 rdf:type owl:NamedIndividual .
+
+
+###  https://ontologies.msaas.me/individuals-test.ttl#_Quantity01_Limit01
+:_Quantity01_Limit01 rdf:type owl:NamedIndividual ;
+                     msaas:limits :_Quantity01 .
+
+
+###  https://ontologies.msaas.me/individuals-test.ttl#_Simulation01
+:_Simulation01 rdf:type owl:NamedIndividual ;
+               msaas:simulates :_ModelInstance01 .
+
+
+###  https://ontologies.msaas.me/individuals-test.ttl#_SimulationResult01
+:_SimulationResult01 rdf:type owl:NamedIndividual ;
+                     msaas:approximates :_System01_Behaviour01 ;
+                     msaas:resultOf :_Simulation01 .
+
+
+###  https://ontologies.msaas.me/individuals-test.ttl#_Solver01
+:_Solver01 rdf:type owl:NamedIndividual ;
+           msaas:hasSetting :_SolverSetting02 ,
+                            :_SolverSetting03 .
+
+
+###  https://ontologies.msaas.me/individuals-test.ttl#_SolverInstance01
+:_SolverInstance01 rdf:type owl:NamedIndividual ;
+                   msaas:defines :_Simulation01 ;
+                   msaas:hasSetting :_SolverSetting01 ;
+                   msaas:instanceOf :_Solver01 .
+
+
+###  https://ontologies.msaas.me/individuals-test.ttl#_SolverSetting01
+:_SolverSetting01 rdf:type owl:NamedIndividual .
+
+
+###  https://ontologies.msaas.me/individuals-test.ttl#_SolverSetting02
+:_SolverSetting02 rdf:type owl:NamedIndividual ,
+                           msaas:SolverSettingDefault .
+
+
+###  https://ontologies.msaas.me/individuals-test.ttl#_SolverSetting03
+:_SolverSetting03 rdf:type owl:NamedIndividual ,
+                           msaas:SolverSettingFree .
+
+
 ###  https://ontologies.msaas.me/individuals-test.ttl#_System01
-:_System01 rdf:type owl:NamedIndividual ;
+:_System01 rdf:type owl:NamedIndividual ,
+                    msaas:System ;
            msaas:realizes :_ClassOfSystems01 .
+
+
+###  https://ontologies.msaas.me/individuals-test.ttl#_System01_Behaviour01
+:_System01_Behaviour01 rdf:type owl:NamedIndividual ;
+                       msaas:definedBy :_System01 .
+
+
+###  https://ontologies.msaas.me/individuals-test.ttl#_System01_Behaviour01_FinalState01
+:_System01_Behaviour01_FinalState01 rdf:type owl:NamedIndividual ;
+                                    msaas:isStateOf :_System01_Behaviour01 .
+
+
+###  https://ontologies.msaas.me/individuals-test.ttl#_System01_Behaviour01_InitialState01
+:_System01_Behaviour01_InitialState01 rdf:type owl:NamedIndividual ;
+                                      msaas:defines :_System01_Behaviour01 ;
+                                      msaas:isStateOf :_System01_Behaviour01 .
+
+
+###  https://ontologies.msaas.me/individuals-test.ttl#_System01_Behaviour01_State01
+:_System01_Behaviour01_State01 rdf:type owl:NamedIndividual ;
+                               msaas:isStateOf :_System01_Behaviour01 .
 
 
 ###  https://ontologies.msaas.me/individuals-test.ttl#_System01_Property01
@@ -47,6 +154,15 @@
 ###  https://ontologies.msaas.me/individuals-test.ttl#_System01_Property02
 :_System01_Property02 rdf:type owl:NamedIndividual ;
                       msaas:isPropertyOf :_System01 .
+
+
+###  https://ontologies.msaas.me/individuals-test.ttl#_Variable01
+:_Variable01 rdf:type owl:NamedIndividual .
+
+
+###  https://ontologies.msaas.me/individuals-test.ttl#_Variable01_Constraint01
+:_Variable01_Constraint01 rdf:type owl:NamedIndividual ;
+                          msaas:restricts :_Variable01 .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
