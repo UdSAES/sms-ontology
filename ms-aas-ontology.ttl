@@ -26,6 +26,17 @@
               rdfs:comment "The subject is an approximation of the object."@en .
 
 
+###  https://ontologies.msaas.me/ms-aas-ontology.ttl#constrainedBy
+:constrainedBy rdf:type owl:ObjectProperty ;
+               owl:inverseOf :constrains ;
+               rdfs:comment "A model parameter has a constraint."@en .
+
+
+###  https://ontologies.msaas.me/ms-aas-ontology.ttl#constrains
+:constrains rdf:type owl:ObjectProperty ;
+            rdfs:comment "The subject is a constraint for a model parameter."@en .
+
+
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#definedBy
 :definedBy rdf:type owl:ObjectProperty ;
            owl:inverseOf :defines ;
@@ -59,7 +70,26 @@
 :hasSetting rdf:type owl:ObjectProperty ;
             owl:inverseOf :isSettingFor ;
             rdfs:domain :Solver ;
-            rdfs:range :SolverSetting .
+            rdfs:range :SolverSetting ;
+            rdfs:comment "A solver has a setting."@en .
+
+
+###  https://ontologies.msaas.me/ms-aas-ontology.ttl#hasState
+:hasState rdf:type owl:ObjectProperty ;
+          owl:inverseOf :isStateOf ;
+          rdfs:comment "A system behaviour at a specific point in time is a system state."@en .
+
+
+###  https://ontologies.msaas.me/ms-aas-ontology.ttl#instanceOf
+:instanceOf rdf:type owl:ObjectProperty ;
+            owl:inverseOf :instantiatedBy ;
+            rdfs:comment "The subject is an instance of the object."@en .
+
+
+###  https://ontologies.msaas.me/ms-aas-ontology.ttl#instantiatedBy
+:instantiatedBy rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:comment "The subject is instantiated by the object."@en .
 
 
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#isParameterOf
@@ -78,7 +108,24 @@
 
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#isSettingFor
 :isSettingFor rdf:type owl:ObjectProperty ;
-              rdfs:range :Solver .
+              rdfs:range :Solver ;
+              rdfs:comment "The subject is a setting for a solver."@en .
+
+
+###  https://ontologies.msaas.me/ms-aas-ontology.ttl#isStateOf
+:isStateOf rdf:type owl:ObjectProperty ;
+           rdfs:comment "The subject is a state of a system."@en .
+
+
+###  https://ontologies.msaas.me/ms-aas-ontology.ttl#limitedBy
+:limitedBy rdf:type owl:ObjectProperty ;
+           owl:inverseOf :limits ;
+           rdfs:comment "A quantity is limited in its range (e.g. a mass has a non-negative value)."@en .
+
+
+###  https://ontologies.msaas.me/ms-aas-ontology.ttl#limits
+:limits rdf:type owl:ObjectProperty ;
+        rdfs:comment "The subject limits the range of a quantity."@en .
 
 
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#realizedBy
@@ -101,6 +148,17 @@
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#represents
 :represents rdf:type owl:ObjectProperty ;
             rdfs:comment "The subject represents the object."@en .
+
+
+###  https://ontologies.msaas.me/ms-aas-ontology.ttl#restrictedBy
+:restrictedBy rdf:type owl:ObjectProperty ;
+              owl:inverseOf :restricts ;
+              rdfs:comment "The values a variable can take are restricted by the object."@en .
+
+
+###  https://ontologies.msaas.me/ms-aas-ontology.ttl#restricts
+:restricts rdf:type owl:ObjectProperty ;
+           rdfs:comment "The subject restricts the possible values of a variable."@en .
 
 
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#resultOf
