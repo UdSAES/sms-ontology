@@ -209,21 +209,25 @@
 
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#ClassOfSystems
 :ClassOfSystems rdf:type owl:Class ;
+                rdfs:subClassOf :RealOrEnvisioned ;
                 rdfs:comment "A class of individual names denoting an entire class of similar real-world or envisioned systems, for example \"all bicycles\", \"all loudspeakers\", et cetera."@en .
 
 
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#Context
 :Context rdf:type owl:Class ;
+         rdfs:subClassOf :RealOrEnvisioned ;
          rdfs:comment "A real-world or envisioned context for the system under investigation; i.e. the conditions at the system boundary at each instant during the observation period."@en .
 
 
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#InputVector
 :InputVector rdf:type owl:Class ;
+             rdfs:subClassOf :Virtual ;
              rdfs:comment "The inputs supplied to a model instance during simulation (corresponds to u(t) in the state-space-representation)."@en .
 
 
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#Model
 :Model rdf:type owl:Class ;
+       rdfs:subClassOf :Virtual ;
        rdfs:comment "An unambiguous representation of knowlegde about some aspects of a class of systems."@en .
 
 
@@ -247,11 +251,13 @@
                                                     :ModelParameterNonFree
                                                   )
                                     ] ;
+                rdfs:subClassOf :Virtual ;
                 rdfs:comment "A model parameter, corresponding to a system property."@en .
 
 
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#ModelParameterConstraint
 :ModelParameterConstraint rdf:type owl:Class ;
+                          rdfs:subClassOf :Virtual ;
                           rdfs:comment "A constraint on the possible values that a model parameter can take."@en .
 
 
@@ -276,26 +282,37 @@
 
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#Quantity
 :Quantity rdf:type owl:Class ;
-          rdfs:comment "A real-world or envisioned physical quantity consisting that has a value and a unit."@en .
+          rdfs:subClassOf :RealOrEnvisioned ;
+          rdfs:comment "A real-world or envisioned physical quantity that has a value and a unit."@en .
 
 
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#QuantityLimit
 :QuantityLimit rdf:type owl:Class ;
+               rdfs:subClassOf :RealOrEnvisioned ;
                rdfs:comment "A constraint on the value that a quantity can assume, e.g.: a quantity of type mass cannot have a negative value."@en .
+
+
+###  https://ontologies.msaas.me/ms-aas-ontology.ttl#RealOrEnvisioned
+:RealOrEnvisioned rdf:type owl:Class ;
+                  owl:disjointWith :Virtual ;
+                  rdfs:comment "Anything that either exists in the real world or is envisioned as something that exists in the real world."@en .
 
 
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#Simulation
 :Simulation rdf:type owl:Class ;
+            rdfs:subClassOf :Virtual ;
             rdfs:comment "A concept for identifying specific simulation runs that, by definition, combines specific initial values, model instance, input vector and solver instance and has a simulation result."@en .
 
 
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#SimulationResult
 :SimulationResult rdf:type owl:Class ;
+                  rdfs:subClassOf :Virtual ;
                   rdfs:comment "The result of performing a simulation on a model instance, i.e. the numerical approximation of the behaviour of a system within a context represented by model instance and input vector."@en .
 
 
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#Solver
 :Solver rdf:type owl:Class ;
+        rdfs:subClassOf :Virtual ;
         rdfs:comment "An implementation of an algorithm for numerically approximating the solution of a model that can be parameterized, i.e. not all required settings are set."@en .
 
 
@@ -319,6 +336,7 @@
                                                    :SolverSettingNonFree
                                                  )
                                    ] ;
+               rdfs:subClassOf :Virtual ;
                rdfs:comment "A configuration option for a solver, e.g. step size, tolerance, output density, ..."@en .
 
 
@@ -357,6 +375,7 @@
 
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#SystemBehaviour
 :SystemBehaviour rdf:type owl:Class ;
+                 rdfs:subClassOf :RealOrEnvisioned ;
                  rdfs:comment "The trajectory of the system state for each time instant during the observation period."@en .
 
 
@@ -367,6 +386,7 @@
                                                     :SystemPropertyNonFree
                                                   )
                                     ] ;
+                rdfs:subClassOf :RealOrEnvisioned ;
                 rdfs:comment "A design-time property of a specific real-world or envisioned system, e.g. the value of a resistor of the length of a beam."@en .
 
 
@@ -385,6 +405,7 @@
 
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#SystemState
 :SystemState rdf:type owl:Class ;
+             rdfs:subClassOf :RealOrEnvisioned ;
              rdfs:comment "The state of the system at a specific time instant, i.e. the value of all system quantities at a point in time."@en .
 
 
@@ -403,12 +424,19 @@
 
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#Variable
 :Variable rdf:type owl:Class ;
+          rdfs:subClassOf :Virtual ;
           rdfs:comment "A model variable of a type that has a value changing over time and a constant unit; possibly a representation of a quantity."@en .
 
 
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#VariableConstraint
 :VariableConstraint rdf:type owl:Class ;
+                    rdfs:subClassOf :Virtual ;
                     rdfs:comment "A constraint on a variable, e.g.min/max-assertions that partly define the experimental frame of a model (e.g. \"this equation only holds for a certain temperature range\")."@en .
+
+
+###  https://ontologies.msaas.me/ms-aas-ontology.ttl#Virtual
+:Virtual rdf:type owl:Class ;
+         rdfs:comment "All entities that belong to the domain of modelling and simulation, i.e. everything that is but an abstraction of a real-world or envisioned system."@en .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
