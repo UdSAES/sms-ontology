@@ -34,6 +34,8 @@
 
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#constrains
 :constrains rdf:type owl:ObjectProperty ;
+            rdfs:domain :ModelParameterConstraint ;
+            rdfs:range :ModelParameter ;
             rdfs:comment "The subject is a constraint for a model parameter."@en .
 
 
@@ -89,6 +91,8 @@
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#instantiatedBy
 :instantiatedBy rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:domain :Virtual ;
+                rdfs:range :Virtual ;
                 rdfs:comment "The subject is instantiated by the object."@en .
 
 
@@ -114,6 +118,8 @@
 
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#isStateOf
 :isStateOf rdf:type owl:ObjectProperty ;
+           rdfs:domain :SystemState ;
+           rdfs:range :SystemBehaviour ;
            rdfs:comment "The subject is a state of a system."@en .
 
 
@@ -125,6 +131,8 @@
 
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#limits
 :limits rdf:type owl:ObjectProperty ;
+        rdfs:domain :QuantityLimit ;
+        rdfs:range :Quantity ;
         rdfs:comment "The subject limits the range of a quantity."@en .
 
 
@@ -136,6 +144,8 @@
 
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#realizes
 :realizes rdf:type owl:ObjectProperty ;
+          rdfs:domain :RealOrEnvisioned ;
+          rdfs:range :RealOrEnvisioned ;
           rdfs:comment "The subject realizes the object."@en .
 
 
@@ -147,6 +157,8 @@
 
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#represents
 :represents rdf:type owl:ObjectProperty ;
+            rdfs:domain :Virtual ;
+            rdfs:range :RealOrEnvisioned ;
             rdfs:comment "The subject represents the object."@en .
 
 
@@ -158,6 +170,8 @@
 
 ###  https://ontologies.msaas.me/ms-aas-ontology.ttl#restricts
 :restricts rdf:type owl:ObjectProperty ;
+           rdfs:domain :VariableConstraint ;
+           rdfs:range :Variable ;
            rdfs:comment "The subject restricts the possible values of a variable."@en .
 
 
