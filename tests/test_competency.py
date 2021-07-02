@@ -9,7 +9,7 @@ import rdflib
 
 
 class TestCompetency(object):
-    ap = "https://ontologies.msaas.me/individuals-test.ttl#"  # prefix for ABox
+    abox = "https://ontologies.msaas.me/individuals-test.ttl#"  # prefix for ABox
 
     def test_satisfiability(self, hermit, kb):
         """Verify that the knowledge base is satisfiable/consistent (has a model)."""
@@ -27,9 +27,8 @@ class TestCompetency(object):
     @pytest.mark.parametrize(
         "where, expected",
         [
-            # Verify that inverse roles work as expected
-            (f"<{ap}_Model01> msaas:instantiatedBy ?i", ["_ModelInstance01"]),
-            (f"?i msaas:instanceOf <{ap}_Model01>", ["_ModelInstance01"]),
+            ### Verify that roles work as expected (explicit relations only) ###########
+            (f"?i sms:instanceOf <{abox}_Model01>", ["_ModelInstance01"]),
         ],
     )
     def test_instance_retrieval(self, kb, ns_mgr, where, expected):
@@ -41,7 +40,7 @@ class TestCompetency(object):
         graph.parse(kb, format="turtle")
 
         # Prepare and execute query
-        query = "SELECT ?i WHERE { " + where + " }"
+        query = f"SELECT ?i WHERE {{ {where} }}"
         answer = graph.query(query)
 
         actual = []
