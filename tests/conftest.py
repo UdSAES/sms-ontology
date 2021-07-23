@@ -37,7 +37,7 @@ def kb(tmp_path, tbox_rbox):
         content = fp.read()
 
     content = content.replace(
-        f"owl:imports <https://ontologies.msaas.me/ms-aas-ontology.ttl> .",
+        f"owl:imports <https://ontologies.msaas.me/sms-ontology.ttl> .",
         f"owl:imports <file://{tbox_rbox}> .",
     )
 
