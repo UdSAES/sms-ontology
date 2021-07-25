@@ -12,13 +12,13 @@
 #    Object Properties
 #################################################################
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#approximatedBy
+###  https://ontologies.msaas.me/sms-ontology.ttl#approximatedBy
 :approximatedBy rdf:type owl:ObjectProperty ;
                 owl:inverseOf :approximates ;
                 rdfs:comment "The subject is approximated by the object."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#approximates
+###  https://ontologies.msaas.me/sms-ontology.ttl#approximates
 :approximates rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf :represents ;
               rdfs:domain :SimulationResult ;
@@ -26,32 +26,32 @@
               rdfs:comment "The subject is an approximation of the object."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#constrainedBy
+###  https://ontologies.msaas.me/sms-ontology.ttl#constrainedBy
 :constrainedBy rdf:type owl:ObjectProperty ;
                owl:inverseOf :constrains ;
                rdfs:comment "A model parameter has a constraint."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#constrains
+###  https://ontologies.msaas.me/sms-ontology.ttl#constrains
 :constrains rdf:type owl:ObjectProperty ;
             rdfs:domain :ModelParameterConstraint ;
             rdfs:range :ModelParameter ;
             rdfs:comment "The subject is a constraint for a model parameter."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#definedBy
+###  https://ontologies.msaas.me/sms-ontology.ttl#definedBy
 :definedBy rdf:type owl:ObjectProperty ;
            owl:inverseOf :defines ;
            rdfs:comment "The subject is (partially) defined by the object."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#defines
+###  https://ontologies.msaas.me/sms-ontology.ttl#defines
 :defines rdf:type owl:ObjectProperty ;
          rdfs:subPropertyOf owl:topObjectProperty ;
          rdfs:comment "The subject is a defining aspect for the object."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#hasParameter
+###  https://ontologies.msaas.me/sms-ontology.ttl#hasParameter
 :hasParameter rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf owl:topObjectProperty ;
               owl:inverseOf :isParameterOf ;
@@ -60,7 +60,7 @@
               rdfs:comment "The subject has a parameter of type object."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#hasProperty
+###  https://ontologies.msaas.me/sms-ontology.ttl#hasProperty
 :hasProperty rdf:type owl:ObjectProperty ;
              owl:inverseOf :isPropertyOf ;
              rdfs:domain :ClassOfSystems ;
@@ -68,7 +68,7 @@
              rdfs:comment "The subject has the characteristic identified by the object."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#hasSetting
+###  https://ontologies.msaas.me/sms-ontology.ttl#hasSetting
 :hasSetting rdf:type owl:ObjectProperty ;
             owl:inverseOf :isSettingFor ;
             rdfs:domain :Solver ;
@@ -76,19 +76,19 @@
             rdfs:comment "A solver has a setting."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#hasState
+###  https://ontologies.msaas.me/sms-ontology.ttl#hasState
 :hasState rdf:type owl:ObjectProperty ;
           owl:inverseOf :isStateOf ;
           rdfs:comment "A system behaviour at a specific point in time is a system state."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#instanceOf
+###  https://ontologies.msaas.me/sms-ontology.ttl#instanceOf
 :instanceOf rdf:type owl:ObjectProperty ;
             owl:inverseOf :instantiatedBy ;
             rdfs:comment "The subject is an instance of the object."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#instantiatedBy
+###  https://ontologies.msaas.me/sms-ontology.ttl#instantiatedBy
 :instantiatedBy rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf owl:topObjectProperty ;
                 rdfs:domain :Virtual ;
@@ -96,92 +96,92 @@
                 rdfs:comment "The subject is instantiated by the object."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#isParameterOf
+###  https://ontologies.msaas.me/sms-ontology.ttl#isParameterOf
 :isParameterOf rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf owl:topObjectProperty ;
                rdfs:domain :ModelParameter ;
                rdfs:comment "The subject is a parameter of the object."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#isPropertyOf
+###  https://ontologies.msaas.me/sms-ontology.ttl#isPropertyOf
 :isPropertyOf rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf owl:topObjectProperty ;
               rdfs:domain :SystemProperty ;
               rdfs:comment "The subject is a (static/design-time) property of the object."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#isSettingFor
+###  https://ontologies.msaas.me/sms-ontology.ttl#isSettingFor
 :isSettingFor rdf:type owl:ObjectProperty ;
               rdfs:range :Solver ;
               rdfs:comment "The subject is a setting for a solver."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#isStateOf
+###  https://ontologies.msaas.me/sms-ontology.ttl#isStateOf
 :isStateOf rdf:type owl:ObjectProperty ;
            rdfs:domain :SystemState ;
            rdfs:range :SystemBehaviour ;
            rdfs:comment "The subject is a state of a system."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#limitedBy
+###  https://ontologies.msaas.me/sms-ontology.ttl#limitedBy
 :limitedBy rdf:type owl:ObjectProperty ;
            owl:inverseOf :limits ;
            rdfs:comment "A quantity is limited in its range (e.g. a mass has a non-negative value)."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#limits
+###  https://ontologies.msaas.me/sms-ontology.ttl#limits
 :limits rdf:type owl:ObjectProperty ;
         rdfs:domain :QuantityLimit ;
         rdfs:range :Quantity ;
         rdfs:comment "The subject limits the range of a quantity."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#realizedBy
+###  https://ontologies.msaas.me/sms-ontology.ttl#realizedBy
 :realizedBy rdf:type owl:ObjectProperty ;
             owl:inverseOf :realizes ;
             rdfs:comment "The subject is realized by the object."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#realizes
+###  https://ontologies.msaas.me/sms-ontology.ttl#realizes
 :realizes rdf:type owl:ObjectProperty ;
           rdfs:domain :RealOrEnvisioned ;
           rdfs:range :RealOrEnvisioned ;
           rdfs:comment "The subject realizes the object."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#representedBy
+###  https://ontologies.msaas.me/sms-ontology.ttl#representedBy
 :representedBy rdf:type owl:ObjectProperty ;
                owl:inverseOf :represents ;
                rdfs:comment "The subject is represented by the object."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#represents
+###  https://ontologies.msaas.me/sms-ontology.ttl#represents
 :represents rdf:type owl:ObjectProperty ;
             rdfs:domain :Virtual ;
             rdfs:range :RealOrEnvisioned ;
             rdfs:comment "The subject represents the object."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#restrictedBy
+###  https://ontologies.msaas.me/sms-ontology.ttl#restrictedBy
 :restrictedBy rdf:type owl:ObjectProperty ;
               owl:inverseOf :restricts ;
               rdfs:comment "The values a variable can take are restricted by the object."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#restricts
+###  https://ontologies.msaas.me/sms-ontology.ttl#restricts
 :restricts rdf:type owl:ObjectProperty ;
            rdfs:domain :VariableConstraint ;
            rdfs:range :Variable ;
            rdfs:comment "The subject restricts the possible values of a variable."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#resultOf
+###  https://ontologies.msaas.me/sms-ontology.ttl#resultOf
 :resultOf rdf:type owl:ObjectProperty ;
           owl:inverseOf :resultsIn ;
           rdfs:comment "The subject is a result of the object."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#resultsIn
+###  https://ontologies.msaas.me/sms-ontology.ttl#resultsIn
 :resultsIn rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf :defines ;
            rdfs:domain :Simulation ;
@@ -189,13 +189,13 @@
            rdfs:comment "The subject results in the object."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#simulatedBy
+###  https://ontologies.msaas.me/sms-ontology.ttl#simulatedBy
 :simulatedBy rdf:type owl:ObjectProperty ;
              owl:inverseOf :simulates ;
              rdfs:comment "The subject is simulated by the object."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#simulates
+###  https://ontologies.msaas.me/sms-ontology.ttl#simulates
 :simulates rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf :defines ;
            rdfs:domain :Simulation ;
@@ -207,31 +207,31 @@
 #    Classes
 #################################################################
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#ClassOfSystems
+###  https://ontologies.msaas.me/sms-ontology.ttl#ClassOfSystems
 :ClassOfSystems rdf:type owl:Class ;
                 rdfs:subClassOf :RealOrEnvisioned ;
                 rdfs:comment "A class of individual names denoting an entire class of similar real-world or envisioned systems, for example \"all bicycles\", \"all loudspeakers\", et cetera."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#Context
+###  https://ontologies.msaas.me/sms-ontology.ttl#Context
 :Context rdf:type owl:Class ;
          rdfs:subClassOf :RealOrEnvisioned ;
          rdfs:comment "A real-world or envisioned context for the system under investigation; i.e. the conditions at the system boundary at each instant during the observation period."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#InputVector
+###  https://ontologies.msaas.me/sms-ontology.ttl#InputVector
 :InputVector rdf:type owl:Class ;
              rdfs:subClassOf :Virtual ;
              rdfs:comment "The inputs supplied to a model instance during simulation (corresponds to u(t) in the state-space-representation)."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#Model
+###  https://ontologies.msaas.me/sms-ontology.ttl#Model
 :Model rdf:type owl:Class ;
        rdfs:subClassOf :Virtual ;
        rdfs:comment "An unambiguous representation of knowlegde about some aspects of a class of systems."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#ModelInstance
+###  https://ontologies.msaas.me/sms-ontology.ttl#ModelInstance
 :ModelInstance rdf:type owl:Class ;
                owl:equivalentClass [ owl:intersectionOf ( :Model
                                                           [ rdf:type owl:Restriction ;
@@ -244,7 +244,7 @@
                rdfs:comment "A unambiguous representation of knowledge about a specific systems;  i.e. a model where all parameters are set."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#ModelParameter
+###  https://ontologies.msaas.me/sms-ontology.ttl#ModelParameter
 :ModelParameter rdf:type owl:Class ;
                 owl:equivalentClass [ rdf:type owl:Class ;
                                       owl:unionOf ( :ModelParameterFree
@@ -255,68 +255,68 @@
                 rdfs:comment "A model parameter, corresponding to a system property."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#ModelParameterConstraint
+###  https://ontologies.msaas.me/sms-ontology.ttl#ModelParameterConstraint
 :ModelParameterConstraint rdf:type owl:Class ;
                           rdfs:subClassOf :Virtual ;
                           rdfs:comment "A constraint on the possible values that a model parameter can take."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#ModelParameterDefault
+###  https://ontologies.msaas.me/sms-ontology.ttl#ModelParameterDefault
 :ModelParameterDefault rdf:type owl:Class ;
                        rdfs:subClassOf :ModelParameterNonFree ;
                        rdfs:comment "A parameter of a model or model instance that has a valid default value."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#ModelParameterFree
+###  https://ontologies.msaas.me/sms-ontology.ttl#ModelParameterFree
 :ModelParameterFree rdf:type owl:Class ;
                     rdfs:subClassOf :ModelParameter ;
                     owl:disjointWith :ModelParameterNonFree ;
                     rdfs:comment "A parameter of a model that is not set yet, i.e. has no value."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#ModelParameterNonFree
+###  https://ontologies.msaas.me/sms-ontology.ttl#ModelParameterNonFree
 :ModelParameterNonFree rdf:type owl:Class ;
                        rdfs:subClassOf :ModelParameter ;
                        rdfs:comment "A parameter of a model or model instance that has its value set to a valid value."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#Quantity
+###  https://ontologies.msaas.me/sms-ontology.ttl#Quantity
 :Quantity rdf:type owl:Class ;
           rdfs:subClassOf :RealOrEnvisioned ;
           rdfs:comment "A real-world or envisioned physical quantity that has a value and a unit."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#QuantityLimit
+###  https://ontologies.msaas.me/sms-ontology.ttl#QuantityLimit
 :QuantityLimit rdf:type owl:Class ;
                rdfs:subClassOf :RealOrEnvisioned ;
                rdfs:comment "A constraint on the value that a quantity can assume, e.g.: a quantity of type mass cannot have a negative value."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#RealOrEnvisioned
+###  https://ontologies.msaas.me/sms-ontology.ttl#RealOrEnvisioned
 :RealOrEnvisioned rdf:type owl:Class ;
                   owl:disjointWith :Virtual ;
                   rdfs:comment "Anything that either exists in the real world or is envisioned as something that exists in the real world."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#Simulation
+###  https://ontologies.msaas.me/sms-ontology.ttl#Simulation
 :Simulation rdf:type owl:Class ;
             rdfs:subClassOf :Virtual ;
             rdfs:comment "A concept for identifying specific simulation runs that, by definition, combines specific initial values, model instance, input vector and solver instance and has a simulation result."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#SimulationResult
+###  https://ontologies.msaas.me/sms-ontology.ttl#SimulationResult
 :SimulationResult rdf:type owl:Class ;
                   rdfs:subClassOf :Virtual ;
                   rdfs:comment "The result of performing a simulation on a model instance, i.e. the numerical approximation of the behaviour of a system within a context represented by model instance and input vector."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#Solver
+###  https://ontologies.msaas.me/sms-ontology.ttl#Solver
 :Solver rdf:type owl:Class ;
         rdfs:subClassOf :Virtual ;
         rdfs:comment "An implementation of an algorithm for numerically approximating the solution of a model that can be parameterized, i.e. not all required settings are set."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#SolverInstance
+###  https://ontologies.msaas.me/sms-ontology.ttl#SolverInstance
 :SolverInstance rdf:type owl:Class ;
                 owl:equivalentClass [ owl:intersectionOf ( :Solver
                                                            [ rdf:type owl:Restriction ;
@@ -329,7 +329,7 @@
                 rdfs:comment "A solver implementation ready to be executed because all values for all settings are supplied by the user or by means of default values."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#SolverSetting
+###  https://ontologies.msaas.me/sms-ontology.ttl#SolverSetting
 :SolverSetting rdf:type owl:Class ;
                owl:equivalentClass [ rdf:type owl:Class ;
                                      owl:unionOf ( :SolverSettingFree
@@ -340,26 +340,26 @@
                rdfs:comment "A configuration option for a solver, e.g. step size, tolerance, output density, ..."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#SolverSettingDefault
+###  https://ontologies.msaas.me/sms-ontology.ttl#SolverSettingDefault
 :SolverSettingDefault rdf:type owl:Class ;
                       rdfs:subClassOf :SolverSettingNonFree ;
                       rdfs:comment "A solver setting that is set to a valid value by default."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#SolverSettingFree
+###  https://ontologies.msaas.me/sms-ontology.ttl#SolverSettingFree
 :SolverSettingFree rdf:type owl:Class ;
                    rdfs:subClassOf :SolverSetting ;
                    owl:disjointWith :SolverSettingNonFree ;
                    rdfs:comment "A solver setting which has no value set yet."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#SolverSettingNonFree
+###  https://ontologies.msaas.me/sms-ontology.ttl#SolverSettingNonFree
 :SolverSettingNonFree rdf:type owl:Class ;
                       rdfs:subClassOf :SolverSetting ;
                       rdfs:comment "A solver setting that is set to a valid value."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#System
+###  https://ontologies.msaas.me/sms-ontology.ttl#System
 :System rdf:type owl:Class ;
         owl:equivalentClass [ owl:intersectionOf ( :ClassOfSystems
                                                    [ rdf:type owl:Restriction ;
@@ -373,13 +373,13 @@
                      "The properties of a specific system are set! For example: the PV system on the roof of my house, consisting of 20 solar panels of type XYZ belongs to the class `System`, whereas any non-specified PV system in general belongs to the class `ClassOfSystem`."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#SystemBehaviour
+###  https://ontologies.msaas.me/sms-ontology.ttl#SystemBehaviour
 :SystemBehaviour rdf:type owl:Class ;
                  rdfs:subClassOf :RealOrEnvisioned ;
                  rdfs:comment "The trajectory of the system state for each time instant during the observation period."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#SystemProperty
+###  https://ontologies.msaas.me/sms-ontology.ttl#SystemProperty
 :SystemProperty rdf:type owl:Class ;
                 owl:equivalentClass [ rdf:type owl:Class ;
                                       owl:unionOf ( :SystemPropertyFree
@@ -390,51 +390,51 @@
                 rdfs:comment "A design-time property of a specific real-world or envisioned system, e.g. the value of a resistor of the length of a beam."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#SystemPropertyFree
+###  https://ontologies.msaas.me/sms-ontology.ttl#SystemPropertyFree
 :SystemPropertyFree rdf:type owl:Class ;
                     rdfs:subClassOf :SystemProperty ;
                     owl:disjointWith :SystemPropertyNonFree ;
                     rdfs:comment "A system property for which no value is set."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#SystemPropertyNonFree
+###  https://ontologies.msaas.me/sms-ontology.ttl#SystemPropertyNonFree
 :SystemPropertyNonFree rdf:type owl:Class ;
                        rdfs:subClassOf :SystemProperty ;
                        rdfs:comment "A system property that is set to a valid value."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#SystemState
+###  https://ontologies.msaas.me/sms-ontology.ttl#SystemState
 :SystemState rdf:type owl:Class ;
              rdfs:subClassOf :RealOrEnvisioned ;
              rdfs:comment "The state of the system at a specific time instant, i.e. the value of all system quantities at a point in time."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#SystemStateFinal
+###  https://ontologies.msaas.me/sms-ontology.ttl#SystemStateFinal
 :SystemStateFinal rdf:type owl:Class ;
                   rdfs:subClassOf :SystemState ;
                   owl:disjointWith :SystemStateInitial ;
                   rdfs:comment "The state of the system at the end of an observation period."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#SystemStateInitial
+###  https://ontologies.msaas.me/sms-ontology.ttl#SystemStateInitial
 :SystemStateInitial rdf:type owl:Class ;
                     rdfs:subClassOf :SystemState ;
                     rdfs:comment "The state of the system at the very beginning of the observation."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#Variable
+###  https://ontologies.msaas.me/sms-ontology.ttl#Variable
 :Variable rdf:type owl:Class ;
           rdfs:subClassOf :Virtual ;
           rdfs:comment "A model variable of a type that has a value changing over time and a constant unit; possibly a representation of a quantity."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#VariableConstraint
+###  https://ontologies.msaas.me/sms-ontology.ttl#VariableConstraint
 :VariableConstraint rdf:type owl:Class ;
                     rdfs:subClassOf :Virtual ;
                     rdfs:comment "A constraint on a variable, e.g.min/max-assertions that partly define the experimental frame of a model (e.g. \"this equation only holds for a certain temperature range\")."@en .
 
 
-###  https://ontologies.msaas.me/ms-aas-ontology.ttl#Virtual
+###  https://ontologies.msaas.me/sms-ontology.ttl#Virtual
 :Virtual rdf:type owl:Class ;
          rdfs:comment "All entities that belong to the domain of modelling and simulation, i.e. everything that is but an abstraction of a real-world or envisioned system."@en .
 
