@@ -28,25 +28,38 @@
             sms:defines :_System01_Behaviour01 .
 
 
-###  https://ontologies.msaas.me/individuals-test.ttl#_InputVektor01
-:_InputVektor01 rdf:type owl:NamedIndividual ;
+###  https://ontologies.msaas.me/individuals-test.ttl#_InputVector01
+:_InputVector01 rdf:type owl:NamedIndividual ;
                 sms:defines :_Simulation01 ;
                 sms:represents :_Context01 .
 
 
 ###  https://ontologies.msaas.me/individuals-test.ttl#_Model01
 :_Model01 rdf:type owl:NamedIndividual ;
-          sms:hasParameter :_Model01_Parameter00 ;
+          sms:hasParameter :_Model01_Parameter00 ,
+                           :_Model01_Parameter01 ,
+                           :_Model01_Parameter02 ;
           sms:represents :_ClassOfSystems01 .
 
 
 ###  https://ontologies.msaas.me/individuals-test.ttl#_Model01_Parameter00
-:_Model01_Parameter00 rdf:type owl:NamedIndividual .
+:_Model01_Parameter00 rdf:type owl:NamedIndividual ,
+                               sms:ModelParameterDefault .
 
 
 ###  https://ontologies.msaas.me/individuals-test.ttl#_Model01_Parameter00_Constraint01
 :_Model01_Parameter00_Constraint01 rdf:type owl:NamedIndividual ;
                                    sms:constrains :_Model01_Parameter00 .
+
+
+###  https://ontologies.msaas.me/individuals-test.ttl#_Model01_Parameter01
+:_Model01_Parameter01 rdf:type owl:NamedIndividual ,
+                               sms:ModelParameterFree .
+
+
+###  https://ontologies.msaas.me/individuals-test.ttl#_Model01_Parameter02
+:_Model01_Parameter02 rdf:type owl:NamedIndividual ,
+                               sms:ModelParameterFree .
 
 
 ###  https://ontologies.msaas.me/individuals-test.ttl#_ModelInstance01
@@ -67,8 +80,7 @@
 
 
 ###  https://ontologies.msaas.me/individuals-test.ttl#_ModelInstance01_Parameter02
-:_ModelInstance01_Parameter02 rdf:type owl:NamedIndividual ,
-                                       sms:ModelParameterDefault ;
+:_ModelInstance01_Parameter02 rdf:type owl:NamedIndividual ;
                               sms:isParameterOf :_ModelInstance01 .
 
 
@@ -94,29 +106,29 @@
 
 ###  https://ontologies.msaas.me/individuals-test.ttl#_Solver01
 :_Solver01 rdf:type owl:NamedIndividual ;
-           sms:hasSetting :_SolverSetting02 ,
-                          :_SolverSetting03 .
+           sms:hasSetting :_Solver01_Setting00 ,
+                          :_Solver01_Setting01 .
+
+
+###  https://ontologies.msaas.me/individuals-test.ttl#_Solver01_Setting00
+:_Solver01_Setting00 rdf:type owl:NamedIndividual ,
+                              sms:SolverSettingDefault .
+
+
+###  https://ontologies.msaas.me/individuals-test.ttl#_Solver01_Setting01
+:_Solver01_Setting01 rdf:type owl:NamedIndividual ,
+                              sms:SolverSettingFree .
 
 
 ###  https://ontologies.msaas.me/individuals-test.ttl#_SolverInstance01
 :_SolverInstance01 rdf:type owl:NamedIndividual ;
                    sms:defines :_Simulation01 ;
-                   sms:hasSetting :_SolverSetting01 ;
+                   sms:hasSetting :_SolverInstance01_Setting01 ;
                    sms:instanceOf :_Solver01 .
 
 
-###  https://ontologies.msaas.me/individuals-test.ttl#_SolverSetting01
-:_SolverSetting01 rdf:type owl:NamedIndividual .
-
-
-###  https://ontologies.msaas.me/individuals-test.ttl#_SolverSetting02
-:_SolverSetting02 rdf:type owl:NamedIndividual ,
-                           sms:SolverSettingDefault .
-
-
-###  https://ontologies.msaas.me/individuals-test.ttl#_SolverSetting03
-:_SolverSetting03 rdf:type owl:NamedIndividual ,
-                           sms:SolverSettingFree .
+###  https://ontologies.msaas.me/individuals-test.ttl#_SolverInstance01_Setting01
+:_SolverInstance01_Setting01 rdf:type owl:NamedIndividual .
 
 
 ###  https://ontologies.msaas.me/individuals-test.ttl#_System01
