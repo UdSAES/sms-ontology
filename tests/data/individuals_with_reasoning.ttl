@@ -226,12 +226,47 @@ owl:topObjectProperty owl:inverseOf owl:topObjectProperty .
 #    Classes
 #################################################################
 
+###  https://ontologies.msaas.me/sms-ontology.ttl#CanBeApproximated
+<https://ontologies.msaas.me/sms-ontology.ttl#CanBeApproximated> rdf:type owl:Class ;
+                                                                 owl:equivalentClass [ owl:intersectionOf ( <https://ontologies.msaas.me/sms-ontology.ttl#Quantity>
+                                                                                                            [ rdf:type owl:Restriction ;
+                                                                                                              owl:onProperty <https://ontologies.msaas.me/sms-ontology.ttl#representedBy> ;
+                                                                                                              owl:someValuesFrom <https://ontologies.msaas.me/sms-ontology.ttl#ModelOutput>
+                                                                                                            ]
+                                                                                                          ) ;
+                                                                                       rdf:type owl:Class
+                                                                                     ] ;
+                                                                 rdfs:subClassOf <https://ontologies.msaas.me/sms-ontology.ttl#Quantity> ;
+                                                                 owl:disjointWith <https://ontologies.msaas.me/sms-ontology.ttl#Model> ,
+                                                                                  <https://ontologies.msaas.me/sms-ontology.ttl#ModelInput> ,
+                                                                                  <https://ontologies.msaas.me/sms-ontology.ttl#ModelInstance> ,
+                                                                                  <https://ontologies.msaas.me/sms-ontology.ttl#ModelInterface> ,
+                                                                                  <https://ontologies.msaas.me/sms-ontology.ttl#ModelOutput> ,
+                                                                                  <https://ontologies.msaas.me/sms-ontology.ttl#ModelParameter> ,
+                                                                                  <https://ontologies.msaas.me/sms-ontology.ttl#ModelParameterConstraint> ,
+                                                                                  <https://ontologies.msaas.me/sms-ontology.ttl#ModelParameterDefault> ,
+                                                                                  <https://ontologies.msaas.me/sms-ontology.ttl#ModelParameterFree> ,
+                                                                                  <https://ontologies.msaas.me/sms-ontology.ttl#ModelParameterNonFree> ,
+                                                                                  <https://ontologies.msaas.me/sms-ontology.ttl#Simulation> ,
+                                                                                  <https://ontologies.msaas.me/sms-ontology.ttl#SimulationResult> ,
+                                                                                  <https://ontologies.msaas.me/sms-ontology.ttl#Solver> ,
+                                                                                  <https://ontologies.msaas.me/sms-ontology.ttl#SolverInstance> ,
+                                                                                  <https://ontologies.msaas.me/sms-ontology.ttl#SolverSetting> ,
+                                                                                  <https://ontologies.msaas.me/sms-ontology.ttl#SolverSettingDefault> ,
+                                                                                  <https://ontologies.msaas.me/sms-ontology.ttl#SolverSettingFree> ,
+                                                                                  <https://ontologies.msaas.me/sms-ontology.ttl#SolverSettingNonFree> ,
+                                                                                  <https://ontologies.msaas.me/sms-ontology.ttl#Variable> ,
+                                                                                  <https://ontologies.msaas.me/sms-ontology.ttl#VariableConstraint> ,
+                                                                                  <https://ontologies.msaas.me/sms-ontology.ttl#Virtual> .
+
+
 ###  https://ontologies.msaas.me/sms-ontology.ttl#ClassOfSystems
 <https://ontologies.msaas.me/sms-ontology.ttl#ClassOfSystems> rdf:type owl:Class ;
                                                               rdfs:subClassOf <https://ontologies.msaas.me/sms-ontology.ttl#RealOrEnvisioned> ;
                                                               owl:disjointWith <https://ontologies.msaas.me/sms-ontology.ttl#Model> ,
                                                                                <https://ontologies.msaas.me/sms-ontology.ttl#ModelInput> ,
                                                                                <https://ontologies.msaas.me/sms-ontology.ttl#ModelInstance> ,
+                                                                               <https://ontologies.msaas.me/sms-ontology.ttl#ModelInterface> ,
                                                                                <https://ontologies.msaas.me/sms-ontology.ttl#ModelOutput> ,
                                                                                <https://ontologies.msaas.me/sms-ontology.ttl#ModelParameter> ,
                                                                                <https://ontologies.msaas.me/sms-ontology.ttl#ModelParameterConstraint> ,
@@ -856,6 +891,7 @@ owl:topObjectProperty owl:inverseOf owl:topObjectProperty .
 
 ###  https://ontologies.msaas.me/individuals-test.ttl#_Quantity01
 <https://ontologies.msaas.me/individuals-test.ttl#_Quantity01> rdf:type owl:NamedIndividual ,
+                                                                        <https://ontologies.msaas.me/sms-ontology.ttl#CanBeApproximated> ,
                                                                         <https://ontologies.msaas.me/sms-ontology.ttl#Quantity> ,
                                                                         <https://ontologies.msaas.me/sms-ontology.ttl#RealOrEnvisioned> ;
                                                                <https://ontologies.msaas.me/sms-ontology.ttl#limitedBy> <https://ontologies.msaas.me/individuals-test.ttl#_Quantity01_Limit01> ;

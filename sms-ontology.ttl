@@ -239,6 +239,19 @@
 #    Classes
 #################################################################
 
+###  https://ontologies.msaas.me/sms-ontology.ttl#CanBeApproximated
+:CanBeApproximated rdf:type owl:Class ;
+                   owl:equivalentClass [ owl:intersectionOf ( :Quantity
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :representedBy ;
+                                                                owl:someValuesFrom :ModelOutput
+                                                              ]
+                                                            ) ;
+                                         rdf:type owl:Class
+                                       ] ;
+                   rdfs:comment "Quantities that can in principle be computed by means of a model."@en .
+
+
 ###  https://ontologies.msaas.me/sms-ontology.ttl#ClassOfSystems
 :ClassOfSystems rdf:type owl:Class ;
                 rdfs:subClassOf :RealOrEnvisioned ;
