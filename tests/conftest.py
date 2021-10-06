@@ -79,21 +79,6 @@ def hermit():
     return f"java -jar {path}"
 
 
-@pytest.fixture
-def ns_mgr():
-    """Retrieve initialized namespace manager for use with rdflib."""
-
-    ns_mgr = NamespaceManager(rdflib.Graph())
-
-    ns_mgr.bind("rdf", RDF)
-    ns_mgr.bind("owl", OWL)
-    ns_mgr.bind(
-        "sms", rdflib.Namespace("https://ontologies.msaas.me/sms-ontology.ttl#")
-    )
-
-    return ns_mgr
-
-
 def pytest_generate_tests(metafunc):
     """Parameterize tests by reading their consituents from a YAML-file."""
 
