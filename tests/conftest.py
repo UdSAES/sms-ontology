@@ -7,7 +7,17 @@ import os
 
 import pytest
 import rdflib
+import yaml
+from jinja2 import Environment, FileSystemLoader
 from rdflib.namespace import OWL, RDF, NamespaceManager
+
+ENV = Environment(
+    loader=FileSystemLoader(
+        os.path.normpath(os.path.join(os.path.dirname(__file__), ".."))
+    ),
+    trim_blocks=True,
+    lstrip_blocks=True,
+)
 
 
 @pytest.fixture
@@ -82,3 +92,43 @@ def ns_mgr():
     )
 
     return ns_mgr
+
+
+def pytest_generate_tests(metafunc):
+    """Parameterize tests by reading their consituents from a YAML-file."""
+
+    # Load questions from rendered template
+    template = ENV.get_template("tests/questions.yaml.j2")
+    collection = yaml.full_load(
+        template.render(prefix="https://ontologies.msaas.me/individuals-test.ttl#")
+    )
+
+    # Generate tests using the hook provided by pytest
+    if "questions_competency" in metafunc.fixturenames:
+        metafunc.parametrize("questions_competency", collection["competency"])
+
+
+@pytest.fixture
+def individuals_all():
+    """Return path to .ttl-file containing _all_ triples."""
+
+    path = os.path.normpath(
+        os.path.join(
+            os.path.dirname(__file__), "data", "individuals_with_reasoning.ttl"
+        )
+    )
+
+    return path
+
+
+@pytest.fixture
+def graph_empty():
+    """Provide an empty graph that has all the necessary prefix-bindings."""
+
+    graph = rdflib.Graph()
+
+    graph.bind("rdf", RDF)
+    graph.bind("owl", OWL)
+    graph.bind("sms", rdflib.Namespace("https://ontologies.msaas.me/sms-ontology.ttl#"))
+
+    return graph

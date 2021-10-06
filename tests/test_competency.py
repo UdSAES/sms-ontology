@@ -24,6 +24,19 @@ class TestCompetency(object):
 
         assert satisfiable
 
+    def test_sparql_select(self, questions_competency, individuals_all, graph_empty):
+        graph = graph_empty.parse(individuals_all, format="turtle")
+
+        a0 = graph.query(questions_competency["query"])
+
+        # Construct list of expected literal values
+        actual = []
+        for row in a0:
+            actual.append([item.n3().strip("<>") for item in row])
+
+        # Verify that each expected result is in the list of actual results
+        assert questions_competency["expected"] == actual
+
     @pytest.mark.parametrize(
         "where, expected",
         [

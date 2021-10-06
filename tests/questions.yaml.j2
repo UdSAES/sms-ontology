@@ -1,0 +1,13 @@
+# Collection of questions that the knowledge base is expected to answer
+
+---
+competency:
+  - question: "2a) Given a system, what are all models that could be instantiated to represent it?"
+    query: |2
+      SELECT ?model
+      WHERE {
+        <{{ prefix }}_System01> sms:realizes ?cos.
+        ?model sms:represents ?cos.
+      }
+    expected:
+      - - "{{ prefix }}_Model01"
