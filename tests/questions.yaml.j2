@@ -2,12 +2,80 @@
 
 ---
 competency:
+  - question: "1a) Given a class of systems, what are all models that represent it?"
+    query: |2
+      SELECT ?model
+      WHERE {
+        <{{ prefix }}_ClassOfSystems01> rdf:type sms:ClassOfSystems.
+        <{{ prefix }}_ClassOfSystems01> sms:representedBy ?model.
+      }
+    expected:
+      - - "{{ prefix }}_Model01"
+
   - question: "2a) Given a system, what are all models that could be instantiated to represent it?"
     query: |2
       SELECT ?model
       WHERE {
+        <{{ prefix }}_System01> rdf:type sms:System.
         <{{ prefix }}_System01> sms:realizes ?cos.
         ?model sms:represents ?cos.
       }
     expected:
       - - "{{ prefix }}_Model01"
+
+  - question: "2b) Given a system, what are all known model instances that represent it?"
+    query: |2
+      SELECT ?model_instance
+      WHERE {
+        <{{ prefix }}_System01> rdf:type sms:System.
+        <{{ prefix }}_System01> sms:realizes ?cos.
+        ?model sms:represents ?cos.
+        ?model_instance sms:instanceOf ?model.
+      }
+    expected:
+      - - "{{ prefix }}_ModelInstance01"
+
+  - question: "3a) Given a model, what are all known required parameters that MUST be set for instantiation?"
+    query: |2
+      SELECT ?parameter
+      WHERE {
+        <{{ prefix }}_Model01> rdf:type sms:Model.
+        <{{ prefix }}_Model01> sms:hasParameter ?parameter.
+        ?parameter rdf:type sms:ModelParameterFree.
+      }
+    expected:
+      - - "{{ prefix }}_Model01_Parameter01"
+      - - "{{ prefix }}_Model01_Parameter02"
+
+  - question: "3b) Given a model, what are all known default parameters of a model?"
+    query: |2
+      SELECT ?parameter
+      WHERE {
+        <{{ prefix }}_Model01> rdf:type sms:Model.
+        <{{ prefix }}_Model01> sms:hasParameter ?parameter.
+        ?parameter rdf:type sms:ModelParameterDefault.
+      }
+    expected:
+      - - "{{ prefix }}_Model01_Parameter00"
+
+  - question: "5a) Given a solver, what are all known required parameters for instantiation?"
+    query: |2
+      SELECT ?setting
+      WHERE {
+        <{{ prefix}}_Solver01> rdf:type sms:Solver.
+        <{{ prefix}}_Solver01> sms:hasSetting ?setting.
+        ?setting rdf:type sms:SolverSettingFree.
+      }
+    expected:
+      - - "{{ prefix }}_Solver01_Setting01"
+
+  - question: "5b) Given a solver, what are all known default parameters?"
+    query: |2
+      SELECT ?setting
+      WHERE {
+        <{{ prefix}}_Solver01> rdf:type sms:Solver.
+        <{{ prefix}}_Solver01> sms:hasSetting ?setting.
+        ?setting rdf:type sms:SolverSettingDefault.
+      }
+    expected:
+      - - "{{ prefix }}_Solver01_Setting00"
