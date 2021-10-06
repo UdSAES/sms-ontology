@@ -51,6 +51,28 @@
          rdfs:comment "The subject is a defining aspect for the object."@en .
 
 
+###  https://ontologies.msaas.me/sms-ontology.ttl#hasInput
+:hasInput rdf:type owl:ObjectProperty ;
+          owl:inverseOf :isInputOf ;
+          rdfs:domain :Model ;
+          rdfs:range :ModelInput ;
+          owl:propertyChainAxiom ( :instanceOf
+                                   :hasInput
+                                 ) ;
+          rdfs:comment "The subject has the object as its input."@en .
+
+
+###  https://ontologies.msaas.me/sms-ontology.ttl#hasOutput
+:hasOutput rdf:type owl:ObjectProperty ;
+           owl:inverseOf :isOutputOf ;
+           rdfs:domain :Model ;
+           rdfs:range :ModelOutput ;
+           owl:propertyChainAxiom ( :instanceOf
+                                    :hasOutput
+                                  ) ;
+           rdfs:comment "The subject has the object as its output."@en .
+
+
 ###  https://ontologies.msaas.me/sms-ontology.ttl#hasParameter
 :hasParameter rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf owl:topObjectProperty ;
@@ -94,6 +116,16 @@
                 rdfs:domain :Virtual ;
                 rdfs:range :Virtual ;
                 rdfs:comment "The subject is instantiated by the object."@en .
+
+
+###  https://ontologies.msaas.me/sms-ontology.ttl#isInputOf
+:isInputOf rdf:type owl:ObjectProperty ;
+           rdfs:comment "The subject is an input to the object."@en .
+
+
+###  https://ontologies.msaas.me/sms-ontology.ttl#isOutputOf
+:isOutputOf rdf:type owl:ObjectProperty ;
+            rdfs:comment "The subject is an output of the object."@en .
 
 
 ###  https://ontologies.msaas.me/sms-ontology.ttl#isParameterOf
@@ -231,6 +263,12 @@
        rdfs:comment "An unambiguous representation of knowlegde about some aspects of a class of systems."@en .
 
 
+###  https://ontologies.msaas.me/sms-ontology.ttl#ModelInput
+:ModelInput rdf:type owl:Class ;
+            rdfs:subClassOf :Variable ;
+            rdfs:comment "Exactly one input supplied to a model instance during simulation (corresponds to one element of the input vector u(t) in the state-space-representation)."@en .
+
+
 ###  https://ontologies.msaas.me/sms-ontology.ttl#ModelInstance
 :ModelInstance rdf:type owl:Class ;
                owl:equivalentClass [ owl:intersectionOf ( :Model
@@ -242,6 +280,12 @@
                                      rdf:type owl:Class
                                    ] ;
                rdfs:comment "A unambiguous representation of knowledge about a specific systems;  i.e. a model where all parameters are set."@en .
+
+
+###  https://ontologies.msaas.me/sms-ontology.ttl#ModelOutput
+:ModelOutput rdf:type owl:Class ;
+             rdfs:subClassOf :Variable ;
+             rdfs:comment "Exactly one input supplied to a model instance during simulation (corresponds to one element of the output vector y(t) in the state-space-representation)."@en .
 
 
 ###  https://ontologies.msaas.me/sms-ontology.ttl#ModelParameter

@@ -54,6 +54,26 @@ owl:topObjectProperty owl:inverseOf owl:topObjectProperty .
                                                        rdfs:subPropertyOf owl:topObjectProperty .
 
 
+###  https://ontologies.msaas.me/sms-ontology.ttl#hasInput
+<https://ontologies.msaas.me/sms-ontology.ttl#hasInput> rdf:type owl:ObjectProperty ;
+                                                        owl:inverseOf <https://ontologies.msaas.me/sms-ontology.ttl#isInputOf> ;
+                                                        rdfs:domain <https://ontologies.msaas.me/sms-ontology.ttl#Model> ;
+                                                        rdfs:range <https://ontologies.msaas.me/sms-ontology.ttl#ModelInput> ;
+                                                        owl:propertyChainAxiom ( <https://ontologies.msaas.me/sms-ontology.ttl#instanceOf>
+                                                                                 <https://ontologies.msaas.me/sms-ontology.ttl#hasInput>
+                                                                               ) .
+
+
+###  https://ontologies.msaas.me/sms-ontology.ttl#hasOutput
+<https://ontologies.msaas.me/sms-ontology.ttl#hasOutput> rdf:type owl:ObjectProperty ;
+                                                         owl:inverseOf <https://ontologies.msaas.me/sms-ontology.ttl#isOutputOf> ;
+                                                         rdfs:domain <https://ontologies.msaas.me/sms-ontology.ttl#Model> ;
+                                                         rdfs:range <https://ontologies.msaas.me/sms-ontology.ttl#ModelOutput> ;
+                                                         owl:propertyChainAxiom ( <https://ontologies.msaas.me/sms-ontology.ttl#instanceOf>
+                                                                                  <https://ontologies.msaas.me/sms-ontology.ttl#hasOutput>
+                                                                                ) .
+
+
 ###  https://ontologies.msaas.me/sms-ontology.ttl#hasParameter
 <https://ontologies.msaas.me/sms-ontology.ttl#hasParameter> rdf:type owl:ObjectProperty ;
                                                             rdfs:subPropertyOf owl:topObjectProperty ;
@@ -91,6 +111,14 @@ owl:topObjectProperty owl:inverseOf owl:topObjectProperty .
                                                               rdfs:subPropertyOf owl:topObjectProperty ;
                                                               rdfs:domain <https://ontologies.msaas.me/sms-ontology.ttl#Virtual> ;
                                                               rdfs:range <https://ontologies.msaas.me/sms-ontology.ttl#Virtual> .
+
+
+###  https://ontologies.msaas.me/sms-ontology.ttl#isInputOf
+<https://ontologies.msaas.me/sms-ontology.ttl#isInputOf> rdf:type owl:ObjectProperty .
+
+
+###  https://ontologies.msaas.me/sms-ontology.ttl#isOutputOf
+<https://ontologies.msaas.me/sms-ontology.ttl#isOutputOf> rdf:type owl:ObjectProperty .
 
 
 ###  https://ontologies.msaas.me/sms-ontology.ttl#isParameterOf
@@ -202,7 +230,9 @@ owl:topObjectProperty owl:inverseOf owl:topObjectProperty .
 <https://ontologies.msaas.me/sms-ontology.ttl#ClassOfSystems> rdf:type owl:Class ;
                                                               rdfs:subClassOf <https://ontologies.msaas.me/sms-ontology.ttl#RealOrEnvisioned> ;
                                                               owl:disjointWith <https://ontologies.msaas.me/sms-ontology.ttl#Model> ,
+                                                                               <https://ontologies.msaas.me/sms-ontology.ttl#ModelInput> ,
                                                                                <https://ontologies.msaas.me/sms-ontology.ttl#ModelInstance> ,
+                                                                               <https://ontologies.msaas.me/sms-ontology.ttl#ModelOutput> ,
                                                                                <https://ontologies.msaas.me/sms-ontology.ttl#ModelParameter> ,
                                                                                <https://ontologies.msaas.me/sms-ontology.ttl#ModelParameterConstraint> ,
                                                                                <https://ontologies.msaas.me/sms-ontology.ttl#ModelParameterDefault> ,
@@ -225,7 +255,9 @@ owl:topObjectProperty owl:inverseOf owl:topObjectProperty .
 <https://ontologies.msaas.me/sms-ontology.ttl#Context> rdf:type owl:Class ;
                                                        rdfs:subClassOf <https://ontologies.msaas.me/sms-ontology.ttl#RealOrEnvisioned> ;
                                                        owl:disjointWith <https://ontologies.msaas.me/sms-ontology.ttl#Model> ,
+                                                                        <https://ontologies.msaas.me/sms-ontology.ttl#ModelInput> ,
                                                                         <https://ontologies.msaas.me/sms-ontology.ttl#ModelInstance> ,
+                                                                        <https://ontologies.msaas.me/sms-ontology.ttl#ModelOutput> ,
                                                                         <https://ontologies.msaas.me/sms-ontology.ttl#ModelParameter> ,
                                                                         <https://ontologies.msaas.me/sms-ontology.ttl#ModelParameterConstraint> ,
                                                                         <https://ontologies.msaas.me/sms-ontology.ttl#ModelParameterDefault> ,
@@ -260,6 +292,22 @@ owl:topObjectProperty owl:inverseOf owl:topObjectProperty .
                                                                       <https://ontologies.msaas.me/sms-ontology.ttl#SystemStateInitial> .
 
 
+###  https://ontologies.msaas.me/sms-ontology.ttl#ModelInput
+<https://ontologies.msaas.me/sms-ontology.ttl#ModelInput> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <https://ontologies.msaas.me/sms-ontology.ttl#Variable> ;
+                                                          owl:disjointWith <https://ontologies.msaas.me/sms-ontology.ttl#Quantity> ,
+                                                                           <https://ontologies.msaas.me/sms-ontology.ttl#QuantityLimit> ,
+                                                                           <https://ontologies.msaas.me/sms-ontology.ttl#RealOrEnvisioned> ,
+                                                                           <https://ontologies.msaas.me/sms-ontology.ttl#System> ,
+                                                                           <https://ontologies.msaas.me/sms-ontology.ttl#SystemBehaviour> ,
+                                                                           <https://ontologies.msaas.me/sms-ontology.ttl#SystemProperty> ,
+                                                                           <https://ontologies.msaas.me/sms-ontology.ttl#SystemPropertyFree> ,
+                                                                           <https://ontologies.msaas.me/sms-ontology.ttl#SystemPropertyNonFree> ,
+                                                                           <https://ontologies.msaas.me/sms-ontology.ttl#SystemState> ,
+                                                                           <https://ontologies.msaas.me/sms-ontology.ttl#SystemStateFinal> ,
+                                                                           <https://ontologies.msaas.me/sms-ontology.ttl#SystemStateInitial> .
+
+
 ###  https://ontologies.msaas.me/sms-ontology.ttl#ModelInstance
 <https://ontologies.msaas.me/sms-ontology.ttl#ModelInstance> rdf:type owl:Class ;
                                                              owl:equivalentClass [ owl:intersectionOf ( <https://ontologies.msaas.me/sms-ontology.ttl#Model>
@@ -282,6 +330,22 @@ owl:topObjectProperty owl:inverseOf owl:topObjectProperty .
                                                                               <https://ontologies.msaas.me/sms-ontology.ttl#SystemState> ,
                                                                               <https://ontologies.msaas.me/sms-ontology.ttl#SystemStateFinal> ,
                                                                               <https://ontologies.msaas.me/sms-ontology.ttl#SystemStateInitial> .
+
+
+###  https://ontologies.msaas.me/sms-ontology.ttl#ModelOutput
+<https://ontologies.msaas.me/sms-ontology.ttl#ModelOutput> rdf:type owl:Class ;
+                                                           rdfs:subClassOf <https://ontologies.msaas.me/sms-ontology.ttl#Variable> ;
+                                                           owl:disjointWith <https://ontologies.msaas.me/sms-ontology.ttl#Quantity> ,
+                                                                            <https://ontologies.msaas.me/sms-ontology.ttl#QuantityLimit> ,
+                                                                            <https://ontologies.msaas.me/sms-ontology.ttl#RealOrEnvisioned> ,
+                                                                            <https://ontologies.msaas.me/sms-ontology.ttl#System> ,
+                                                                            <https://ontologies.msaas.me/sms-ontology.ttl#SystemBehaviour> ,
+                                                                            <https://ontologies.msaas.me/sms-ontology.ttl#SystemProperty> ,
+                                                                            <https://ontologies.msaas.me/sms-ontology.ttl#SystemPropertyFree> ,
+                                                                            <https://ontologies.msaas.me/sms-ontology.ttl#SystemPropertyNonFree> ,
+                                                                            <https://ontologies.msaas.me/sms-ontology.ttl#SystemState> ,
+                                                                            <https://ontologies.msaas.me/sms-ontology.ttl#SystemStateFinal> ,
+                                                                            <https://ontologies.msaas.me/sms-ontology.ttl#SystemStateInitial> .
 
 
 ###  https://ontologies.msaas.me/sms-ontology.ttl#ModelParameter
@@ -668,11 +732,33 @@ owl:topObjectProperty owl:inverseOf owl:topObjectProperty .
 <https://ontologies.msaas.me/individuals-test.ttl#_Model01> rdf:type owl:NamedIndividual ,
                                                                      <https://ontologies.msaas.me/sms-ontology.ttl#Model> ,
                                                                      <https://ontologies.msaas.me/sms-ontology.ttl#Virtual> ;
+                                                            <https://ontologies.msaas.me/sms-ontology.ttl#hasInput> <https://ontologies.msaas.me/individuals-test.ttl#_Model01_Input01> ;
+                                                            <https://ontologies.msaas.me/sms-ontology.ttl#hasOutput> <https://ontologies.msaas.me/individuals-test.ttl#_Model01_Output01> ;
                                                             <https://ontologies.msaas.me/sms-ontology.ttl#hasParameter> <https://ontologies.msaas.me/individuals-test.ttl#_Model01_Parameter00> ,
                                                                                                                         <https://ontologies.msaas.me/individuals-test.ttl#_Model01_Parameter01> ,
                                                                                                                         <https://ontologies.msaas.me/individuals-test.ttl#_Model01_Parameter02> ;
                                                             <https://ontologies.msaas.me/sms-ontology.ttl#instantiatedBy> <https://ontologies.msaas.me/individuals-test.ttl#_ModelInstance01> ;
                                                             <https://ontologies.msaas.me/sms-ontology.ttl#represents> <https://ontologies.msaas.me/individuals-test.ttl#_ClassOfSystems01> .
+
+
+###  https://ontologies.msaas.me/individuals-test.ttl#_Model01_Input01
+<https://ontologies.msaas.me/individuals-test.ttl#_Model01_Input01> rdf:type owl:NamedIndividual ,
+                                                                             <https://ontologies.msaas.me/sms-ontology.ttl#ModelInput> ,
+                                                                             <https://ontologies.msaas.me/sms-ontology.ttl#Variable> ,
+                                                                             <https://ontologies.msaas.me/sms-ontology.ttl#Virtual> ;
+                                                                    <https://ontologies.msaas.me/sms-ontology.ttl#isInputOf> <https://ontologies.msaas.me/individuals-test.ttl#_Model01> ,
+                                                                                                                             <https://ontologies.msaas.me/individuals-test.ttl#_ModelInstance01> ;
+                                                                    <https://ontologies.msaas.me/sms-ontology.ttl#represents> <https://ontologies.msaas.me/individuals-test.ttl#_Quantity00> .
+
+
+###  https://ontologies.msaas.me/individuals-test.ttl#_Model01_Output01
+<https://ontologies.msaas.me/individuals-test.ttl#_Model01_Output01> rdf:type owl:NamedIndividual ,
+                                                                              <https://ontologies.msaas.me/sms-ontology.ttl#ModelOutput> ,
+                                                                              <https://ontologies.msaas.me/sms-ontology.ttl#Variable> ,
+                                                                              <https://ontologies.msaas.me/sms-ontology.ttl#Virtual> ;
+                                                                     <https://ontologies.msaas.me/sms-ontology.ttl#isOutputOf> <https://ontologies.msaas.me/individuals-test.ttl#_Model01> ,
+                                                                                                                               <https://ontologies.msaas.me/individuals-test.ttl#_ModelInstance01> ;
+                                                                     <https://ontologies.msaas.me/sms-ontology.ttl#represents> <https://ontologies.msaas.me/individuals-test.ttl#_Quantity01> .
 
 
 ###  https://ontologies.msaas.me/individuals-test.ttl#_Model01_Parameter00
@@ -714,6 +800,8 @@ owl:topObjectProperty owl:inverseOf owl:topObjectProperty .
                                                                              <https://ontologies.msaas.me/sms-ontology.ttl#ModelInstance> ,
                                                                              <https://ontologies.msaas.me/sms-ontology.ttl#Virtual> ;
                                                                     <https://ontologies.msaas.me/sms-ontology.ttl#definedBy> <https://ontologies.msaas.me/individuals-test.ttl#_Simulation01> ;
+                                                                    <https://ontologies.msaas.me/sms-ontology.ttl#hasInput> <https://ontologies.msaas.me/individuals-test.ttl#_Model01_Input01> ;
+                                                                    <https://ontologies.msaas.me/sms-ontology.ttl#hasOutput> <https://ontologies.msaas.me/individuals-test.ttl#_Model01_Output01> ;
                                                                     <https://ontologies.msaas.me/sms-ontology.ttl#hasParameter> <https://ontologies.msaas.me/individuals-test.ttl#_ModelInstance01_Parameter01> ,
                                                                                                                                 <https://ontologies.msaas.me/individuals-test.ttl#_ModelInstance01_Parameter02> ;
                                                                     <https://ontologies.msaas.me/sms-ontology.ttl#instanceOf> <https://ontologies.msaas.me/individuals-test.ttl#_Model01> ;
@@ -744,11 +832,18 @@ owl:topObjectProperty owl:inverseOf owl:topObjectProperty .
                                                                                 <https://ontologies.msaas.me/sms-ontology.ttl#isParameterOf> <https://ontologies.msaas.me/individuals-test.ttl#_ModelInstance01> .
 
 
+###  https://ontologies.msaas.me/individuals-test.ttl#_Quantity00
+<https://ontologies.msaas.me/individuals-test.ttl#_Quantity00> rdf:type owl:NamedIndividual ,
+                                                                        <https://ontologies.msaas.me/sms-ontology.ttl#RealOrEnvisioned> ;
+                                                               <https://ontologies.msaas.me/sms-ontology.ttl#representedBy> <https://ontologies.msaas.me/individuals-test.ttl#_Model01_Input01> .
+
+
 ###  https://ontologies.msaas.me/individuals-test.ttl#_Quantity01
 <https://ontologies.msaas.me/individuals-test.ttl#_Quantity01> rdf:type owl:NamedIndividual ,
                                                                         <https://ontologies.msaas.me/sms-ontology.ttl#Quantity> ,
                                                                         <https://ontologies.msaas.me/sms-ontology.ttl#RealOrEnvisioned> ;
-                                                               <https://ontologies.msaas.me/sms-ontology.ttl#limitedBy> <https://ontologies.msaas.me/individuals-test.ttl#_Quantity01_Limit01> .
+                                                               <https://ontologies.msaas.me/sms-ontology.ttl#limitedBy> <https://ontologies.msaas.me/individuals-test.ttl#_Quantity01_Limit01> ;
+                                                               <https://ontologies.msaas.me/sms-ontology.ttl#representedBy> <https://ontologies.msaas.me/individuals-test.ttl#_Model01_Output01> .
 
 
 ###  https://ontologies.msaas.me/individuals-test.ttl#_Quantity01_Limit01

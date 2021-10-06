@@ -36,10 +36,21 @@
 
 ###  https://ontologies.msaas.me/individuals-test.ttl#_Model01
 :_Model01 rdf:type owl:NamedIndividual ;
+          sms:hasInput :_Model01_Input01 ;
           sms:hasParameter :_Model01_Parameter00 ,
                            :_Model01_Parameter01 ,
                            :_Model01_Parameter02 ;
           sms:represents :_ClassOfSystems01 .
+
+
+###  https://ontologies.msaas.me/individuals-test.ttl#_Model01_Input01
+:_Model01_Input01 rdf:type owl:NamedIndividual .
+
+
+###  https://ontologies.msaas.me/individuals-test.ttl#_Model01_Output01
+:_Model01_Output01 rdf:type owl:NamedIndividual ;
+                   sms:isOutputOf :_Model01 ;
+                   sms:represents :_Quantity01 .
 
 
 ###  https://ontologies.msaas.me/individuals-test.ttl#_Model01_Parameter00
@@ -82,6 +93,11 @@
 ###  https://ontologies.msaas.me/individuals-test.ttl#_ModelInstance01_Parameter02
 :_ModelInstance01_Parameter02 rdf:type owl:NamedIndividual ;
                               sms:isParameterOf :_ModelInstance01 .
+
+
+###  https://ontologies.msaas.me/individuals-test.ttl#_Quantity00
+:_Quantity00 rdf:type owl:NamedIndividual ;
+             sms:representedBy :_Model01_Input01 .
 
 
 ###  https://ontologies.msaas.me/individuals-test.ttl#_Quantity01
