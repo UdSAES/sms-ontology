@@ -10,7 +10,7 @@ competency:
         <{{ prefix }}_ClassOfSystems01> sms:representedBy ?model.
       }
     expected:
-      - - "{{ prefix }}_Model01"
+      - - "<{{ prefix }}_Model01>"
 
   - question: "2a) Given a system, what are all models that could be instantiated to represent it?"
     query: |2
@@ -21,7 +21,7 @@ competency:
         ?model sms:represents ?cos.
       }
     expected:
-      - - "{{ prefix }}_Model01"
+      - - "<{{ prefix }}_Model01>"
 
   - question: "2b) Given a system, what are all known model instances that represent it?"
     query: |2
@@ -33,7 +33,7 @@ competency:
         ?model_instance sms:instanceOf ?model.
       }
     expected:
-      - - "{{ prefix }}_ModelInstance01"
+      - - "<{{ prefix }}_ModelInstance01>"
 
   - question: "3a) Given a model, what are all known required parameters that MUST be set for instantiation?"
     query: |2
@@ -44,8 +44,8 @@ competency:
         ?parameter rdf:type sms:ModelParameterFree.
       }
     expected:
-      - - "{{ prefix }}_Model01_Parameter01"
-      - - "{{ prefix }}_Model01_Parameter02"
+      - - "<{{ prefix }}_Model01_Parameter01>"
+      - - "<{{ prefix }}_Model01_Parameter02>"
 
   - question: "3b) Given a model, what are all known default parameters of a model?"
     query: |2
@@ -56,7 +56,7 @@ competency:
         ?parameter rdf:type sms:ModelParameterDefault.
       }
     expected:
-      - - "{{ prefix }}_Model01_Parameter00"
+      - - "<{{ prefix }}_Model01_Parameter00>"
 
   - question: "5a) Given a solver, what are all known required parameters for instantiation?"
     query: |2
@@ -67,7 +67,7 @@ competency:
         ?setting rdf:type sms:SolverSettingFree.
       }
     expected:
-      - - "{{ prefix }}_Solver01_Setting01"
+      - - "<{{ prefix }}_Solver01_Setting01>"
 
   - question: "5b) Given a solver, what are all known default parameters?"
     query: |2
@@ -78,4 +78,4 @@ competency:
         ?setting rdf:type sms:SolverSettingDefault.
       }
     expected:
-      - - "{{ prefix }}_Solver01_Setting00"
+      - - "<{{ prefix }}_Solver01_Setting00>"

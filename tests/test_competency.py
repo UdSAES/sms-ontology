@@ -31,7 +31,7 @@ class TestCompetency(object):
         # Construct list of expected literal values
         actual = []
         for row in a0:
-            actual.append([item.n3().strip("<>") for item in row])
+            actual.append([item.n3() for item in row])
 
         # Verify that each expected result is in the list of actual results
         assert questions_competency["expected"] == actual
