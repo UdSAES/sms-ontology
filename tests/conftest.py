@@ -15,14 +15,25 @@ def tbox_rbox():
     """Retrieve the full path to the file defining TBox and RBox."""
 
     path = os.path.normpath(
-        os.path.join(os.path.dirname(__file__), "..", "ms-aas-ontology.ttl")
+        os.path.join(os.path.dirname(__file__), "..", "sms-ontology.ttl")
     )
 
     return path
 
 
 @pytest.fixture
-def kb(tmp_path, tbox_rbox):
+def abox():
+    """Retrieve the full path to the file containing the definition of the ABox."""
+
+    path = os.path.normpath(
+        os.path.join(os.path.dirname(__file__), "data", "individuals.ttl")
+    )
+
+    return path
+
+
+@pytest.fixture
+def kb(tmp_path, hermit, tbox_rbox):
     """Retrieve the full path to the file containing the knowledge base (KB)."""
 
     file_name = "individuals.ttl"
@@ -67,7 +78,7 @@ def ns_mgr():
     ns_mgr.bind("rdf", RDF)
     ns_mgr.bind("owl", OWL)
     ns_mgr.bind(
-        "msaas", rdflib.Namespace("https://ontologies.msaas.me/ms-aas-ontology.ttl#")
+        "sms", rdflib.Namespace("https://ontologies.msaas.me/sms-ontology.ttl#")
     )
 
     return ns_mgr

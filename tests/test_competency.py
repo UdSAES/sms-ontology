@@ -29,6 +29,10 @@ class TestCompetency(object):
         [
             ### Verify that roles work as expected (explicit relations only) ###########
             (f"?i sms:instanceOf <{abox}_Model01>", ["_ModelInstance01"]),
+            ("?i sms:limits ?o", ["_Quantity01"]),
+            # ...
+            ### Verify that domain and range assertions work fine ######################
+            # ...
             ### Answer competency questions (see README) ###############################
             (
                 f"<{abox}_System01> sms:realizes ?cos. ?i sms:represents ?cos",
