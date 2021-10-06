@@ -283,7 +283,13 @@
 ###  https://ontologies.msaas.me/sms-ontology.ttl#Quantity
 :Quantity rdf:type owl:Class ;
           rdfs:subClassOf :RealOrEnvisioned ;
-          rdfs:comment "A real-world or envisioned physical quantity that has a value and a unit."@en .
+          rdfs:comment "A specific real-world or envisioned physical quantity that has a value and a unit."@en .
+
+
+###  https://ontologies.msaas.me/sms-ontology.ttl#QuantityKind
+:QuantityKind rdf:type owl:Class ;
+              rdfs:subClassOf :RealOrEnvisioned ;
+              rdfs:comment "A general type of quantity, not related to any specific system or occurence (but to all of them)."@en .
 
 
 ###  https://ontologies.msaas.me/sms-ontology.ttl#QuantityLimit
