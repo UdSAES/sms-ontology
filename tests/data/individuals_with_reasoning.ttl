@@ -280,6 +280,7 @@ owl:topObjectProperty owl:inverseOf owl:topObjectProperty .
 <https://ontologies.msaas.me/sms-ontology.ttl#Model> rdf:type owl:Class ;
                                                      rdfs:subClassOf <https://ontologies.msaas.me/sms-ontology.ttl#Virtual> ;
                                                      owl:disjointWith <https://ontologies.msaas.me/sms-ontology.ttl#Quantity> ,
+                                                                      <https://ontologies.msaas.me/sms-ontology.ttl#QuantityKind> ,
                                                                       <https://ontologies.msaas.me/sms-ontology.ttl#QuantityLimit> ,
                                                                       <https://ontologies.msaas.me/sms-ontology.ttl#RealOrEnvisioned> ,
                                                                       <https://ontologies.msaas.me/sms-ontology.ttl#System> ,
@@ -296,6 +297,7 @@ owl:topObjectProperty owl:inverseOf owl:topObjectProperty .
 <https://ontologies.msaas.me/sms-ontology.ttl#ModelInput> rdf:type owl:Class ;
                                                           rdfs:subClassOf <https://ontologies.msaas.me/sms-ontology.ttl#Variable> ;
                                                           owl:disjointWith <https://ontologies.msaas.me/sms-ontology.ttl#Quantity> ,
+                                                                           <https://ontologies.msaas.me/sms-ontology.ttl#QuantityKind> ,
                                                                            <https://ontologies.msaas.me/sms-ontology.ttl#QuantityLimit> ,
                                                                            <https://ontologies.msaas.me/sms-ontology.ttl#RealOrEnvisioned> ,
                                                                            <https://ontologies.msaas.me/sms-ontology.ttl#System> ,
@@ -320,6 +322,7 @@ owl:topObjectProperty owl:inverseOf owl:topObjectProperty .
                                                                                  ] ;
                                                              rdfs:subClassOf <https://ontologies.msaas.me/sms-ontology.ttl#Model> ;
                                                              owl:disjointWith <https://ontologies.msaas.me/sms-ontology.ttl#Quantity> ,
+                                                                              <https://ontologies.msaas.me/sms-ontology.ttl#QuantityKind> ,
                                                                               <https://ontologies.msaas.me/sms-ontology.ttl#QuantityLimit> ,
                                                                               <https://ontologies.msaas.me/sms-ontology.ttl#RealOrEnvisioned> ,
                                                                               <https://ontologies.msaas.me/sms-ontology.ttl#System> ,
@@ -336,6 +339,7 @@ owl:topObjectProperty owl:inverseOf owl:topObjectProperty .
 <https://ontologies.msaas.me/sms-ontology.ttl#ModelOutput> rdf:type owl:Class ;
                                                            rdfs:subClassOf <https://ontologies.msaas.me/sms-ontology.ttl#Variable> ;
                                                            owl:disjointWith <https://ontologies.msaas.me/sms-ontology.ttl#Quantity> ,
+                                                                            <https://ontologies.msaas.me/sms-ontology.ttl#QuantityKind> ,
                                                                             <https://ontologies.msaas.me/sms-ontology.ttl#QuantityLimit> ,
                                                                             <https://ontologies.msaas.me/sms-ontology.ttl#RealOrEnvisioned> ,
                                                                             <https://ontologies.msaas.me/sms-ontology.ttl#System> ,
@@ -357,6 +361,7 @@ owl:topObjectProperty owl:inverseOf owl:topObjectProperty .
                                                                                   ] ;
                                                               rdfs:subClassOf <https://ontologies.msaas.me/sms-ontology.ttl#Virtual> ;
                                                               owl:disjointWith <https://ontologies.msaas.me/sms-ontology.ttl#Quantity> ,
+                                                                               <https://ontologies.msaas.me/sms-ontology.ttl#QuantityKind> ,
                                                                                <https://ontologies.msaas.me/sms-ontology.ttl#QuantityLimit> ,
                                                                                <https://ontologies.msaas.me/sms-ontology.ttl#RealOrEnvisioned> ,
                                                                                <https://ontologies.msaas.me/sms-ontology.ttl#System> ,
@@ -373,6 +378,7 @@ owl:topObjectProperty owl:inverseOf owl:topObjectProperty .
 <https://ontologies.msaas.me/sms-ontology.ttl#ModelParameterConstraint> rdf:type owl:Class ;
                                                                         rdfs:subClassOf <https://ontologies.msaas.me/sms-ontology.ttl#Virtual> ;
                                                                         owl:disjointWith <https://ontologies.msaas.me/sms-ontology.ttl#Quantity> ,
+                                                                                         <https://ontologies.msaas.me/sms-ontology.ttl#QuantityKind> ,
                                                                                          <https://ontologies.msaas.me/sms-ontology.ttl#QuantityLimit> ,
                                                                                          <https://ontologies.msaas.me/sms-ontology.ttl#RealOrEnvisioned> ,
                                                                                          <https://ontologies.msaas.me/sms-ontology.ttl#System> ,
@@ -390,6 +396,7 @@ owl:topObjectProperty owl:inverseOf owl:topObjectProperty .
                                                                      rdfs:subClassOf <https://ontologies.msaas.me/sms-ontology.ttl#ModelParameterNonFree> ;
                                                                      owl:disjointWith <https://ontologies.msaas.me/sms-ontology.ttl#ModelParameterFree> ,
                                                                                       <https://ontologies.msaas.me/sms-ontology.ttl#Quantity> ,
+                                                                                      <https://ontologies.msaas.me/sms-ontology.ttl#QuantityKind> ,
                                                                                       <https://ontologies.msaas.me/sms-ontology.ttl#QuantityLimit> ,
                                                                                       <https://ontologies.msaas.me/sms-ontology.ttl#RealOrEnvisioned> ,
                                                                                       <https://ontologies.msaas.me/sms-ontology.ttl#System> ,
@@ -407,6 +414,7 @@ owl:topObjectProperty owl:inverseOf owl:topObjectProperty .
                                                                   rdfs:subClassOf <https://ontologies.msaas.me/sms-ontology.ttl#ModelParameter> ;
                                                                   owl:disjointWith <https://ontologies.msaas.me/sms-ontology.ttl#ModelParameterNonFree> ,
                                                                                    <https://ontologies.msaas.me/sms-ontology.ttl#Quantity> ,
+                                                                                   <https://ontologies.msaas.me/sms-ontology.ttl#QuantityKind> ,
                                                                                    <https://ontologies.msaas.me/sms-ontology.ttl#QuantityLimit> ,
                                                                                    <https://ontologies.msaas.me/sms-ontology.ttl#RealOrEnvisioned> ,
                                                                                    <https://ontologies.msaas.me/sms-ontology.ttl#System> ,
@@ -423,6 +431,7 @@ owl:topObjectProperty owl:inverseOf owl:topObjectProperty .
 <https://ontologies.msaas.me/sms-ontology.ttl#ModelParameterNonFree> rdf:type owl:Class ;
                                                                      rdfs:subClassOf <https://ontologies.msaas.me/sms-ontology.ttl#ModelParameter> ;
                                                                      owl:disjointWith <https://ontologies.msaas.me/sms-ontology.ttl#Quantity> ,
+                                                                                      <https://ontologies.msaas.me/sms-ontology.ttl#QuantityKind> ,
                                                                                       <https://ontologies.msaas.me/sms-ontology.ttl#QuantityLimit> ,
                                                                                       <https://ontologies.msaas.me/sms-ontology.ttl#RealOrEnvisioned> ,
                                                                                       <https://ontologies.msaas.me/sms-ontology.ttl#System> ,
@@ -449,6 +458,22 @@ owl:topObjectProperty owl:inverseOf owl:topObjectProperty .
                                                                          <https://ontologies.msaas.me/sms-ontology.ttl#Variable> ,
                                                                          <https://ontologies.msaas.me/sms-ontology.ttl#VariableConstraint> ,
                                                                          <https://ontologies.msaas.me/sms-ontology.ttl#Virtual> .
+
+
+###  https://ontologies.msaas.me/sms-ontology.ttl#QuantityKind
+<https://ontologies.msaas.me/sms-ontology.ttl#QuantityKind> rdf:type owl:Class ;
+                                                            rdfs:subClassOf <https://ontologies.msaas.me/sms-ontology.ttl#RealOrEnvisioned> ;
+                                                            owl:disjointWith <https://ontologies.msaas.me/sms-ontology.ttl#Simulation> ,
+                                                                             <https://ontologies.msaas.me/sms-ontology.ttl#SimulationResult> ,
+                                                                             <https://ontologies.msaas.me/sms-ontology.ttl#Solver> ,
+                                                                             <https://ontologies.msaas.me/sms-ontology.ttl#SolverInstance> ,
+                                                                             <https://ontologies.msaas.me/sms-ontology.ttl#SolverSetting> ,
+                                                                             <https://ontologies.msaas.me/sms-ontology.ttl#SolverSettingDefault> ,
+                                                                             <https://ontologies.msaas.me/sms-ontology.ttl#SolverSettingFree> ,
+                                                                             <https://ontologies.msaas.me/sms-ontology.ttl#SolverSettingNonFree> ,
+                                                                             <https://ontologies.msaas.me/sms-ontology.ttl#Variable> ,
+                                                                             <https://ontologies.msaas.me/sms-ontology.ttl#VariableConstraint> ,
+                                                                             <https://ontologies.msaas.me/sms-ontology.ttl#Virtual> .
 
 
 ###  https://ontologies.msaas.me/sms-ontology.ttl#QuantityLimit
