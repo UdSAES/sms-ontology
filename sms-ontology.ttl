@@ -251,12 +251,6 @@
          rdfs:comment "A real-world or envisioned context for the system under investigation; i.e. the conditions at the system boundary at each instant during the observation period."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#InputVector
-:InputVector rdf:type owl:Class ;
-             rdfs:subClassOf :Virtual ;
-             rdfs:comment "The inputs supplied to a model instance during simulation (corresponds to u(t) in the state-space-representation)."@en .
-
-
 ###  https://ontologies.msaas.me/sms-ontology.ttl#Model
 :Model rdf:type owl:Class ;
        rdfs:subClassOf :Virtual ;

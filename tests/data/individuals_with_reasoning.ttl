@@ -715,17 +715,8 @@ owl:topObjectProperty owl:inverseOf owl:topObjectProperty .
 
 
 ###  https://ontologies.msaas.me/individuals-test.ttl#_Context01
-<https://ontologies.msaas.me/individuals-test.ttl#_Context01> rdf:type owl:NamedIndividual ,
-                                                                       <https://ontologies.msaas.me/sms-ontology.ttl#RealOrEnvisioned> ;
-                                                              <https://ontologies.msaas.me/sms-ontology.ttl#defines> <https://ontologies.msaas.me/individuals-test.ttl#_System01_Behaviour01> ;
-                                                              <https://ontologies.msaas.me/sms-ontology.ttl#representedBy> <https://ontologies.msaas.me/individuals-test.ttl#_InputVector01> .
-
-
-###  https://ontologies.msaas.me/individuals-test.ttl#_InputVector01
-<https://ontologies.msaas.me/individuals-test.ttl#_InputVector01> rdf:type owl:NamedIndividual ,
-                                                                           <https://ontologies.msaas.me/sms-ontology.ttl#Virtual> ;
-                                                                  <https://ontologies.msaas.me/sms-ontology.ttl#defines> <https://ontologies.msaas.me/individuals-test.ttl#_Simulation01> ;
-                                                                  <https://ontologies.msaas.me/sms-ontology.ttl#represents> <https://ontologies.msaas.me/individuals-test.ttl#_Context01> .
+<https://ontologies.msaas.me/individuals-test.ttl#_Context01> rdf:type owl:NamedIndividual ;
+                                                              <https://ontologies.msaas.me/sms-ontology.ttl#defines> <https://ontologies.msaas.me/individuals-test.ttl#_System01_Behaviour01> .
 
 
 ###  https://ontologies.msaas.me/individuals-test.ttl#_Model01
@@ -857,8 +848,6 @@ owl:topObjectProperty owl:inverseOf owl:topObjectProperty .
 <https://ontologies.msaas.me/individuals-test.ttl#_Simulation01> rdf:type owl:NamedIndividual ,
                                                                           <https://ontologies.msaas.me/sms-ontology.ttl#Simulation> ,
                                                                           <https://ontologies.msaas.me/sms-ontology.ttl#Virtual> ;
-                                                                 <https://ontologies.msaas.me/sms-ontology.ttl#definedBy> <https://ontologies.msaas.me/individuals-test.ttl#_InputVector01> ,
-                                                                                                                          <https://ontologies.msaas.me/individuals-test.ttl#_ModelInstance01_InitialState01> ,
                                                                                                                           <https://ontologies.msaas.me/individuals-test.ttl#_SolverInstance01> ;
                                                                  <https://ontologies.msaas.me/sms-ontology.ttl#defines> <https://ontologies.msaas.me/individuals-test.ttl#_ModelInstance01> ,
                                                                                                                         <https://ontologies.msaas.me/individuals-test.ttl#_SimulationResult01> ;

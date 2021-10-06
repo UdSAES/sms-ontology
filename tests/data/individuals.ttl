@@ -28,12 +28,6 @@
             sms:defines :_System01_Behaviour01 .
 
 
-###  https://ontologies.msaas.me/individuals-test.ttl#_InputVector01
-:_InputVector01 rdf:type owl:NamedIndividual ;
-                sms:defines :_Simulation01 ;
-                sms:represents :_Context01 .
-
-
 ###  https://ontologies.msaas.me/individuals-test.ttl#_Model01
 :_Model01 rdf:type owl:NamedIndividual ;
           sms:hasInput :_Model01_Input01 ;
