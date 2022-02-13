@@ -1,18 +1,8 @@
-= Reasoning about M&S _as a Service_
+= Systems, Models, Simulation (SMS)-Ontology
 
 image:https://img.shields.io/badge/code%20style-black-000000.svg[alt=Code style: black, link=https://github.com/psf/black]
 image:https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336[alt=Imports: isort, link=https://timothycrosley.github.io/isort]
 
 Making models, the ability to simulate them, and the simulation results part of the semantic web requires an ontology that links the real (or envisioned) world in terms of systems, context, initial state, ... to their abstract representations as model instances, input data, initial conditions et cetera and also captures knowledge about the involved concepts. The ontology developed in this repository does just that.
 
-
-== Competency Questions
-Competency questions are used to assess whether or not the developed ontology can fulfil its purpose. They are realized as unit tests, written in Python using the https://docs.pytest.org/en/6.2.x/[pytest] framework. Since the competency questions involve instance retrieval, an ABox is needed; it is populated in `tests/data/individuals.ttl`.
-
-WARNING: At the moment, only relationships explicitly defined in the ABox are found -- so far, there is no reasoner involved in running the unit tests!
-
-
-.Additional interesting Questions
-* Possible to create forecast for system/class of systems?
-* Possible to read system state from real-world/envisioned sensor?
-* ...
+IMPORTANT: *Recent improvements to code and README/documentation have not been pushed to GitHub yet -- will be fixed as soon as possible*, certainly in calender week 7! (2022-02-13)
