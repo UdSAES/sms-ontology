@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2022 UdS AES <https://www.uni-saarland.de/lehrstuhl/frey.html>
+//
+// SPDX-License-Identifier: CC-BY-4.0
+
 = Systems, Models, Simulation (SMS)-Ontology
 
 image:https://img.shields.io/badge/code%20style-black-000000.svg[alt=Code style: black, link=https://github.com/psf/black]
