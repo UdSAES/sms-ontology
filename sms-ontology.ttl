@@ -286,7 +286,8 @@
 
 ###  https://ontologies.msaas.me/sms-ontology.ttl#ModelInput
 :ModelInput rdf:type owl:Class ;
-            rdfs:subClassOf :Variable ;
+            rdfs:subClassOf :UserInput ,
+                            :Variable ;
             rdfs:comment "Exactly one input supplied to a model instance during simulation (corresponds to one element of the input vector u(t) in the state-space-representation)."@en .
 
 
@@ -341,7 +342,8 @@
 
 ###  https://ontologies.msaas.me/sms-ontology.ttl#ModelParameterNonFree
 :ModelParameterNonFree rdf:type owl:Class ;
-                       rdfs:subClassOf :ModelParameter ;
+                       rdfs:subClassOf :ModelParameter ,
+                                       :UserInput ;
                        rdfs:comment "A parameter of a model or model instance that has its value set to a valid value."@en .
 
 
@@ -426,7 +428,8 @@
 
 ###  https://ontologies.msaas.me/sms-ontology.ttl#SolverSettingNonFree
 :SolverSettingNonFree rdf:type owl:Class ;
-                      rdfs:subClassOf :SolverSetting ;
+                      rdfs:subClassOf :SolverSetting ,
+                                      :UserInput ;
                       rdfs:comment "A solver setting that is set to a valid value."@en .
 
 
@@ -491,6 +494,11 @@
 :SystemStateInitial rdf:type owl:Class ;
                     rdfs:subClassOf :SystemState ;
                     rdfs:comment "The state of the system at the very beginning of the observation."@en .
+
+
+###  https://ontologies.msaas.me/sms-ontology.ttl#UserInput
+:UserInput rdf:type owl:Class ;
+           rdfs:subClassOf :Virtual .
 
 
 ###  https://ontologies.msaas.me/sms-ontology.ttl#Variable
