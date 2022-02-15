@@ -1,552 +1,553 @@
-@prefix : <https://ontologies.msaas.me/sms-ontology.ttl#> .
+@prefix : <https://purl.org/sms-ontology#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sms: <https://purl.org/sms-ontology#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <https://ontologies.msaas.me/sms-ontology.ttl> .
+@base <https://purl.org/sms-ontology> .
 
-<https://ontologies.msaas.me/sms-ontology.ttl> rdf:type owl:Ontology .
+<https://purl.org/sms-ontology> rdf:type owl:Ontology .
 
 #################################################################
 #    Object Properties
 #################################################################
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#approximatedBy
-:approximatedBy rdf:type owl:ObjectProperty ;
-                owl:inverseOf :approximates ;
-                rdfs:comment "The subject is approximated by the object."@en .
+###  https://purl.org/sms-ontology#approximatedBy
+sms:approximatedBy rdf:type owl:ObjectProperty ;
+                   owl:inverseOf sms:approximates ;
+                   rdfs:comment "The subject is approximated by the object."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#approximates
-:approximates rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf :represents ;
-              rdfs:domain :SimulationResult ;
-              rdfs:range :SystemBehaviour ;
-              rdfs:comment "The subject is an approximation of the object."@en .
+###  https://purl.org/sms-ontology#approximates
+sms:approximates rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf sms:represents ;
+                 rdfs:domain sms:SimulationResult ;
+                 rdfs:range sms:SystemBehaviour ;
+                 rdfs:comment "The subject is an approximation of the object."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#calculatedBy
-:calculatedBy rdf:type owl:ObjectProperty ;
-              owl:inverseOf :calculates .
+###  https://purl.org/sms-ontology#calculatedBy
+sms:calculatedBy rdf:type owl:ObjectProperty ;
+                 owl:inverseOf sms:calculates .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#calculates
-:calculates rdf:type owl:ObjectProperty ;
-            rdfs:subPropertyOf :hasOutput ;
-            rdfs:domain :ModelInstance ;
-            rdfs:range :ModelOutput ;
-            rdfs:comment "A model instance calculates a specific variable"@en .
+###  https://purl.org/sms-ontology#calculates
+sms:calculates rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf sms:hasOutput ;
+               rdfs:domain sms:ModelInstance ;
+               rdfs:range sms:ModelOutput ;
+               rdfs:comment "A model instance calculates a specific variable"@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#compatibleWith
-:compatibleWith rdf:type owl:ObjectProperty ,
-                         owl:SymmetricProperty ;
-                rdfs:comment "Two interface variables of two distinct models or model instances can be connected iff they are `compatibleWith` each other."@en .
+###  https://purl.org/sms-ontology#compatibleWith
+sms:compatibleWith rdf:type owl:ObjectProperty ,
+                            owl:SymmetricProperty ;
+                   rdfs:comment "Two interface variables of two distinct models or model instances can be connected iff they are `compatibleWith` each other."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#constrainedBy
-:constrainedBy rdf:type owl:ObjectProperty ;
-               owl:inverseOf :constrains ;
-               rdfs:comment "A model parameter has a constraint."@en .
+###  https://purl.org/sms-ontology#constrainedBy
+sms:constrainedBy rdf:type owl:ObjectProperty ;
+                  owl:inverseOf sms:constrains ;
+                  rdfs:comment "A model parameter has a constraint."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#constrains
-:constrains rdf:type owl:ObjectProperty ;
-            rdfs:domain :ModelParameterConstraint ;
-            rdfs:range :ModelParameter ;
-            rdfs:comment "The subject is a constraint for a model parameter."@en .
+###  https://purl.org/sms-ontology#constrains
+sms:constrains rdf:type owl:ObjectProperty ;
+               rdfs:domain sms:ModelParameterConstraint ;
+               rdfs:range sms:ModelParameter ;
+               rdfs:comment "The subject is a constraint for a model parameter."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#definedBy
-:definedBy rdf:type owl:ObjectProperty ;
-           owl:inverseOf :defines ;
-           rdfs:comment "The subject is (partially) defined by the object."@en .
+###  https://purl.org/sms-ontology#definedBy
+sms:definedBy rdf:type owl:ObjectProperty ;
+              owl:inverseOf sms:defines ;
+              rdfs:comment "The subject is (partially) defined by the object."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#defines
-:defines rdf:type owl:ObjectProperty ;
-         rdfs:subPropertyOf owl:topObjectProperty ;
-         rdfs:comment "The subject is a defining aspect for the object."@en .
+###  https://purl.org/sms-ontology#defines
+sms:defines rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:comment "The subject is a defining aspect for the object."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#hasInput
-:hasInput rdf:type owl:ObjectProperty ;
-          owl:inverseOf :isInputOf ;
-          rdfs:domain :Model ;
-          rdfs:range :ModelInput ;
-          owl:propertyChainAxiom ( :instanceOf
-                                   :hasInput
-                                 ) ;
-          rdfs:comment "The subject has the object as its input."@en .
+###  https://purl.org/sms-ontology#hasInput
+sms:hasInput rdf:type owl:ObjectProperty ;
+             owl:inverseOf sms:isInputOf ;
+             rdfs:domain sms:Model ;
+             rdfs:range sms:ModelInput ;
+             owl:propertyChainAxiom ( sms:instanceOf
+                                      sms:hasInput
+                                    ) ;
+             rdfs:comment "The subject has the object as its input."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#hasOutput
-:hasOutput rdf:type owl:ObjectProperty ;
-           owl:inverseOf :isOutputOf ;
-           rdfs:domain :Model ;
-           rdfs:range :ModelOutput ;
-           owl:propertyChainAxiom ( :instanceOf
-                                    :hasOutput
-                                  ) ;
-           rdfs:comment "The subject has the object as its output."@en .
+###  https://purl.org/sms-ontology#hasOutput
+sms:hasOutput rdf:type owl:ObjectProperty ;
+              owl:inverseOf sms:isOutputOf ;
+              rdfs:domain sms:Model ;
+              rdfs:range sms:ModelOutput ;
+              owl:propertyChainAxiom ( sms:instanceOf
+                                       sms:hasOutput
+                                     ) ;
+              rdfs:comment "The subject has the object as its output."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#hasParameter
-:hasParameter rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf owl:topObjectProperty ;
-              owl:inverseOf :isParameterOf ;
-              rdfs:domain :Model ;
-              rdfs:range :ModelParameter ;
-              rdfs:comment "The subject has a parameter of type object."@en .
+###  https://purl.org/sms-ontology#hasParameter
+sms:hasParameter rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 owl:inverseOf sms:isParameterOf ;
+                 rdfs:domain sms:Model ;
+                 rdfs:range sms:ModelParameter ;
+                 rdfs:comment "The subject has a parameter of type object."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#hasProperty
-:hasProperty rdf:type owl:ObjectProperty ;
-             owl:inverseOf :isPropertyOf ;
-             rdfs:domain :ClassOfSystems ;
-             rdfs:range :SystemProperty ;
-             rdfs:comment "The subject has the characteristic identified by the object."@en .
+###  https://purl.org/sms-ontology#hasProperty
+sms:hasProperty rdf:type owl:ObjectProperty ;
+                owl:inverseOf sms:isPropertyOf ;
+                rdfs:domain sms:ClassOfSystems ;
+                rdfs:range sms:SystemProperty ;
+                rdfs:comment "The subject has the characteristic identified by the object."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#hasSetting
-:hasSetting rdf:type owl:ObjectProperty ;
-            owl:inverseOf :isSettingFor ;
-            rdfs:domain :Solver ;
-            rdfs:range :SolverSetting ;
-            rdfs:comment "A solver has a setting."@en .
+###  https://purl.org/sms-ontology#hasSetting
+sms:hasSetting rdf:type owl:ObjectProperty ;
+               owl:inverseOf sms:isSettingFor ;
+               rdfs:domain sms:Solver ;
+               rdfs:range sms:SolverSetting ;
+               rdfs:comment "A solver has a setting."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#hasState
-:hasState rdf:type owl:ObjectProperty ;
-          owl:inverseOf :isStateOf ;
-          rdfs:comment "A system behaviour at a specific point in time is a system state."@en .
+###  https://purl.org/sms-ontology#hasState
+sms:hasState rdf:type owl:ObjectProperty ;
+             owl:inverseOf sms:isStateOf ;
+             rdfs:comment "A system behaviour at a specific point in time is a system state."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#instanceOf
-:instanceOf rdf:type owl:ObjectProperty ;
-            owl:inverseOf :instantiatedBy ;
-            rdfs:comment "The subject is an instance of the object."@en .
+###  https://purl.org/sms-ontology#instanceOf
+sms:instanceOf rdf:type owl:ObjectProperty ;
+               owl:inverseOf sms:instantiatedBy ;
+               rdfs:comment "The subject is an instance of the object."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#instantiatedBy
-:instantiatedBy rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf owl:topObjectProperty ;
-                rdfs:domain :Virtual ;
-                rdfs:range :Virtual ;
-                rdfs:comment "The subject is instantiated by the object."@en .
+###  https://purl.org/sms-ontology#instantiatedBy
+sms:instantiatedBy rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   rdfs:domain sms:Virtual ;
+                   rdfs:range sms:Virtual ;
+                   rdfs:comment "The subject is instantiated by the object."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#isInputOf
-:isInputOf rdf:type owl:ObjectProperty ;
-           rdfs:comment "The subject is an input to the object."@en .
+###  https://purl.org/sms-ontology#isInputOf
+sms:isInputOf rdf:type owl:ObjectProperty ;
+              rdfs:comment "The subject is an input to the object."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#isOutputOf
-:isOutputOf rdf:type owl:ObjectProperty ;
-            rdfs:comment "The subject is an output of the object."@en .
+###  https://purl.org/sms-ontology#isOutputOf
+sms:isOutputOf rdf:type owl:ObjectProperty ;
+               rdfs:comment "The subject is an output of the object."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#isParameterOf
-:isParameterOf rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf owl:topObjectProperty ;
-               rdfs:domain :ModelParameter ;
-               rdfs:comment "The subject is a parameter of the object."@en .
+###  https://purl.org/sms-ontology#isParameterOf
+sms:isParameterOf rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf owl:topObjectProperty ;
+                  rdfs:domain sms:ModelParameter ;
+                  rdfs:comment "The subject is a parameter of the object."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#isPropertyOf
-:isPropertyOf rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf owl:topObjectProperty ;
-              rdfs:domain :SystemProperty ;
-              rdfs:comment "The subject is a (static/design-time) property of the object."@en .
+###  https://purl.org/sms-ontology#isPropertyOf
+sms:isPropertyOf rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdfs:domain sms:SystemProperty ;
+                 rdfs:comment "The subject is a (static/design-time) property of the object."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#isSettingFor
-:isSettingFor rdf:type owl:ObjectProperty ;
-              rdfs:range :Solver ;
-              rdfs:comment "The subject is a setting for a solver."@en .
+###  https://purl.org/sms-ontology#isSettingFor
+sms:isSettingFor rdf:type owl:ObjectProperty ;
+                 rdfs:range sms:Solver ;
+                 rdfs:comment "The subject is a setting for a solver."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#isStateOf
-:isStateOf rdf:type owl:ObjectProperty ;
-           rdfs:domain :SystemState ;
-           rdfs:range :SystemBehaviour ;
-           rdfs:comment "The subject is a state of a system."@en .
+###  https://purl.org/sms-ontology#isStateOf
+sms:isStateOf rdf:type owl:ObjectProperty ;
+              rdfs:domain sms:SystemState ;
+              rdfs:range sms:SystemBehaviour ;
+              rdfs:comment "The subject is a state of a system."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#isValueFor
-:isValueFor rdf:type owl:ObjectProperty ;
-            rdfs:range :Virtual ;
-            rdfs:comment "The subject is the quantity (value, unit) to which the object (an individual/IRI) is set."@en .
+###  https://purl.org/sms-ontology#isValueFor
+sms:isValueFor rdf:type owl:ObjectProperty ;
+               rdfs:range sms:Virtual ;
+               rdfs:comment "The subject is the quantity (value, unit) to which the object (an individual/IRI) is set."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#limitedBy
-:limitedBy rdf:type owl:ObjectProperty ;
-           owl:inverseOf :limits ;
-           rdfs:comment "A quantity is limited in its range (e.g. a mass has a non-negative value)."@en .
+###  https://purl.org/sms-ontology#limitedBy
+sms:limitedBy rdf:type owl:ObjectProperty ;
+              owl:inverseOf sms:limits ;
+              rdfs:comment "A quantity is limited in its range (e.g. a mass has a non-negative value)."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#limits
-:limits rdf:type owl:ObjectProperty ;
-        rdfs:domain :QuantityLimit ;
-        rdfs:range :Quantity ;
-        rdfs:comment "The subject limits the range of a quantity."@en .
+###  https://purl.org/sms-ontology#limits
+sms:limits rdf:type owl:ObjectProperty ;
+           rdfs:domain sms:QuantityLimit ;
+           rdfs:range sms:Quantity ;
+           rdfs:comment "The subject limits the range of a quantity."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#mappedTo
-:mappedTo rdf:type owl:ObjectProperty ;
-          rdfs:comment """The subject is mapped to the object; e.g.:
+###  https://purl.org/sms-ontology#mappedTo
+sms:mappedTo rdf:type owl:ObjectProperty ;
+             rdfs:comment """The subject is mapped to the object; e.g.:
 s a sosa:ObservableProperty;
   sms:mappedTo o .
 
 o a sms:Variable ."""@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#realizedBy
-:realizedBy rdf:type owl:ObjectProperty ;
-            owl:inverseOf :realizes ;
-            rdfs:comment "The subject is realized by the object."@en .
+###  https://purl.org/sms-ontology#realizedBy
+sms:realizedBy rdf:type owl:ObjectProperty ;
+               owl:inverseOf sms:realizes ;
+               rdfs:comment "The subject is realized by the object."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#realizes
-:realizes rdf:type owl:ObjectProperty ;
-          rdfs:domain :RealOrEnvisioned ;
-          rdfs:range :RealOrEnvisioned ;
-          rdfs:comment "The subject realizes the object."@en .
+###  https://purl.org/sms-ontology#realizes
+sms:realizes rdf:type owl:ObjectProperty ;
+             rdfs:domain sms:RealOrEnvisioned ;
+             rdfs:range sms:RealOrEnvisioned ;
+             rdfs:comment "The subject realizes the object."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#representedBy
-:representedBy rdf:type owl:ObjectProperty ;
-               owl:inverseOf :represents ;
-               rdfs:comment "The subject is represented by the object."@en .
+###  https://purl.org/sms-ontology#representedBy
+sms:representedBy rdf:type owl:ObjectProperty ;
+                  owl:inverseOf sms:represents ;
+                  rdfs:comment "The subject is represented by the object."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#represents
-:represents rdf:type owl:ObjectProperty ;
-            rdfs:domain :Virtual ;
-            rdfs:range :RealOrEnvisioned ;
-            rdfs:comment "The subject represents the object."@en .
+###  https://purl.org/sms-ontology#represents
+sms:represents rdf:type owl:ObjectProperty ;
+               rdfs:domain sms:Virtual ;
+               rdfs:range sms:RealOrEnvisioned ;
+               rdfs:comment "The subject represents the object."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#restrictedBy
-:restrictedBy rdf:type owl:ObjectProperty ;
-              owl:inverseOf :restricts ;
-              rdfs:comment "The values a variable can take are restricted by the object."@en .
+###  https://purl.org/sms-ontology#restrictedBy
+sms:restrictedBy rdf:type owl:ObjectProperty ;
+                 owl:inverseOf sms:restricts ;
+                 rdfs:comment "The values a variable can take are restricted by the object."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#restricts
-:restricts rdf:type owl:ObjectProperty ;
-           rdfs:domain :VariableConstraint ;
-           rdfs:range :Variable ;
-           rdfs:comment "The subject restricts the possible values of a variable."@en .
+###  https://purl.org/sms-ontology#restricts
+sms:restricts rdf:type owl:ObjectProperty ;
+              rdfs:domain sms:VariableConstraint ;
+              rdfs:range sms:Variable ;
+              rdfs:comment "The subject restricts the possible values of a variable."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#resultOf
-:resultOf rdf:type owl:ObjectProperty ;
-          owl:inverseOf :resultsIn ;
-          rdfs:comment "The subject is a result of the object."@en .
+###  https://purl.org/sms-ontology#resultOf
+sms:resultOf rdf:type owl:ObjectProperty ;
+             owl:inverseOf sms:resultsIn ;
+             rdfs:comment "The subject is a result of the object."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#resultsIn
-:resultsIn rdf:type owl:ObjectProperty ;
-           rdfs:subPropertyOf :defines ;
-           rdfs:domain :Simulation ;
-           rdfs:range :SimulationResult ;
-           rdfs:comment "The subject results in the object."@en .
+###  https://purl.org/sms-ontology#resultsIn
+sms:resultsIn rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf sms:defines ;
+              rdfs:domain sms:Simulation ;
+              rdfs:range sms:SimulationResult ;
+              rdfs:comment "The subject results in the object."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#simulatedBy
-:simulatedBy rdf:type owl:ObjectProperty ;
-             owl:inverseOf :simulates ;
-             rdfs:comment "The subject is simulated by the object."@en .
+###  https://purl.org/sms-ontology#simulatedBy
+sms:simulatedBy rdf:type owl:ObjectProperty ;
+                owl:inverseOf sms:simulates ;
+                rdfs:comment "The subject is simulated by the object."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#simulates
-:simulates rdf:type owl:ObjectProperty ;
-           rdfs:subPropertyOf :defines ;
-           rdfs:domain :Simulation ;
-           rdfs:range :ModelInstance ;
-           rdfs:comment "The subject simulates the object."@en .
+###  https://purl.org/sms-ontology#simulates
+sms:simulates rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf sms:defines ;
+              rdfs:domain sms:Simulation ;
+              rdfs:range sms:ModelInstance ;
+              rdfs:comment "The subject simulates the object."@en .
 
 
 #################################################################
 #    Classes
 #################################################################
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#CanBeApproximated
-:CanBeApproximated rdf:type owl:Class ;
-                   owl:equivalentClass [ owl:intersectionOf ( :Quantity
+###  https://purl.org/sms-ontology#CanBeApproximated
+sms:CanBeApproximated rdf:type owl:Class ;
+                      owl:equivalentClass [ owl:intersectionOf ( sms:Quantity
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty sms:representedBy ;
+                                                                   owl:someValuesFrom sms:ModelOutput
+                                                                 ]
+                                                               ) ;
+                                            rdf:type owl:Class
+                                          ] ;
+                      rdfs:comment "Quantities that can in principle be computed by means of a model."@en .
+
+
+###  https://purl.org/sms-ontology#ClassOfSystems
+sms:ClassOfSystems rdf:type owl:Class ;
+                   rdfs:subClassOf sms:RealOrEnvisioned ;
+                   rdfs:comment "A class of individual names denoting an entire class of similar real-world or envisioned systems, for example \"all bicycles\", \"all loudspeakers\", et cetera."@en .
+
+
+###  https://purl.org/sms-ontology#Context
+sms:Context rdf:type owl:Class ;
+            rdfs:subClassOf sms:RealOrEnvisioned ;
+            rdfs:comment "A real-world or envisioned context for the system under investigation; i.e. the conditions at the system boundary at each instant during the observation period."@en .
+
+
+###  https://purl.org/sms-ontology#Model
+sms:Model rdf:type owl:Class ;
+          rdfs:subClassOf sms:Virtual ;
+          rdfs:comment "An unambiguous representation of knowlegde about some aspects of a class of systems."@en .
+
+
+###  https://purl.org/sms-ontology#ModelInput
+sms:ModelInput rdf:type owl:Class ;
+               rdfs:subClassOf sms:UserInput ,
+                               sms:Variable ;
+               rdfs:comment "Exactly one input supplied to a model instance during simulation (corresponds to one element of the input vector u(t) in the state-space-representation)."@en .
+
+
+###  https://purl.org/sms-ontology#ModelInstance
+sms:ModelInstance rdf:type owl:Class ;
+                  owl:equivalentClass [ owl:intersectionOf ( sms:Model
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty sms:hasParameter ;
+                                                               owl:allValuesFrom sms:ModelParameterNonFree
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] ;
+                  rdfs:comment "A unambiguous representation of knowledge about a specific systems;  i.e. a model where all parameters are set."@en .
+
+
+###  https://purl.org/sms-ontology#ModelInterface
+sms:ModelInterface rdf:type owl:Class ;
+                   rdfs:subClassOf sms:Virtual ;
+                   rdfs:comment "The interface of a model through which data is exchanged with the outside, i.e. the set of all inputs and outputs."@en .
+
+
+###  https://purl.org/sms-ontology#ModelOutput
+sms:ModelOutput rdf:type owl:Class ;
+                rdfs:subClassOf sms:Variable ;
+                rdfs:comment "Exactly one input supplied to a model instance during simulation (corresponds to one element of the output vector y(t) in the state-space-representation)."@en .
+
+
+###  https://purl.org/sms-ontology#ModelParameter
+sms:ModelParameter rdf:type owl:Class ;
+                   owl:equivalentClass [ rdf:type owl:Class ;
+                                         owl:unionOf ( sms:ModelParameterFree
+                                                       sms:ModelParameterNonFree
+                                                     )
+                                       ] ;
+                   rdfs:subClassOf sms:Virtual ;
+                   rdfs:comment "A model parameter, corresponding to a system property."@en .
+
+
+###  https://purl.org/sms-ontology#ModelParameterConstraint
+sms:ModelParameterConstraint rdf:type owl:Class ;
+                             rdfs:subClassOf sms:Virtual ;
+                             rdfs:comment "A constraint on the possible values that a model parameter can take."@en .
+
+
+###  https://purl.org/sms-ontology#ModelParameterDefault
+sms:ModelParameterDefault rdf:type owl:Class ;
+                          rdfs:subClassOf sms:ModelParameterNonFree ;
+                          rdfs:comment "A parameter of a model or model instance that has a valid default value."@en .
+
+
+###  https://purl.org/sms-ontology#ModelParameterFree
+sms:ModelParameterFree rdf:type owl:Class ;
+                       rdfs:subClassOf sms:ModelParameter ;
+                       owl:disjointWith sms:ModelParameterNonFree ;
+                       rdfs:comment "A parameter of a model that is not set yet, i.e. has no value."@en .
+
+
+###  https://purl.org/sms-ontology#ModelParameterNonFree
+sms:ModelParameterNonFree rdf:type owl:Class ;
+                          rdfs:subClassOf sms:ModelParameter ,
+                                          sms:UserInput ;
+                          rdfs:comment "A parameter of a model or model instance that has its value set to a valid value."@en .
+
+
+###  https://purl.org/sms-ontology#Quantity
+sms:Quantity rdf:type owl:Class ;
+             rdfs:subClassOf sms:RealOrEnvisioned ;
+             rdfs:comment "A specific real-world or envisioned physical quantity that has a value and a unit."@en .
+
+
+###  https://purl.org/sms-ontology#QuantityKind
+sms:QuantityKind rdf:type owl:Class ;
+                 rdfs:subClassOf sms:RealOrEnvisioned ;
+                 rdfs:comment "A general type of quantity, not related to any specific system or occurence (but to all of them)."@en .
+
+
+###  https://purl.org/sms-ontology#QuantityLimit
+sms:QuantityLimit rdf:type owl:Class ;
+                  rdfs:subClassOf sms:RealOrEnvisioned ;
+                  rdfs:comment "A constraint on the value that a quantity can assume, e.g.: a quantity of type mass cannot have a negative value."@en .
+
+
+###  https://purl.org/sms-ontology#RealOrEnvisioned
+sms:RealOrEnvisioned rdf:type owl:Class ;
+                     owl:disjointWith sms:Virtual ;
+                     rdfs:comment "Anything that either exists in the real world or is envisioned as something that exists in the real world."@en .
+
+
+###  https://purl.org/sms-ontology#Simulation
+sms:Simulation rdf:type owl:Class ;
+               rdfs:subClassOf sms:Virtual ;
+               rdfs:comment "A concept for identifying specific simulation runs that, by definition, combines specific initial values, model instance, input vector and solver instance and has a simulation result."@en .
+
+
+###  https://purl.org/sms-ontology#SimulationResult
+sms:SimulationResult rdf:type owl:Class ;
+                     rdfs:subClassOf sms:Virtual ;
+                     rdfs:comment "The result of performing a simulation on a model instance, i.e. the numerical approximation of the behaviour of a system within a context represented by model instance and input vector."@en .
+
+
+###  https://purl.org/sms-ontology#Solver
+sms:Solver rdf:type owl:Class ;
+           rdfs:subClassOf sms:Virtual ;
+           rdfs:comment "An implementation of an algorithm for numerically approximating the solution of a model that can be parameterized, i.e. not all required settings are set."@en .
+
+
+###  https://purl.org/sms-ontology#SolverInstance
+sms:SolverInstance rdf:type owl:Class ;
+                   owl:equivalentClass [ owl:intersectionOf ( sms:Solver
                                                               [ rdf:type owl:Restriction ;
-                                                                owl:onProperty :representedBy ;
-                                                                owl:someValuesFrom :ModelOutput
+                                                                owl:onProperty sms:hasSetting ;
+                                                                owl:allValuesFrom sms:SolverSettingNonFree
                                                               ]
                                                             ) ;
                                          rdf:type owl:Class
                                        ] ;
-                   rdfs:comment "Quantities that can in principle be computed by means of a model."@en .
+                   rdfs:comment "A solver implementation ready to be executed because all values for all settings are supplied by the user or by means of default values."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#ClassOfSystems
-:ClassOfSystems rdf:type owl:Class ;
-                rdfs:subClassOf :RealOrEnvisioned ;
-                rdfs:comment "A class of individual names denoting an entire class of similar real-world or envisioned systems, for example \"all bicycles\", \"all loudspeakers\", et cetera."@en .
+###  https://purl.org/sms-ontology#SolverSetting
+sms:SolverSetting rdf:type owl:Class ;
+                  owl:equivalentClass [ rdf:type owl:Class ;
+                                        owl:unionOf ( sms:SolverSettingFree
+                                                      sms:SolverSettingNonFree
+                                                    )
+                                      ] ;
+                  rdfs:subClassOf sms:Virtual ;
+                  rdfs:comment "A configuration option for a solver, e.g. step size, tolerance, output density, ..."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#Context
-:Context rdf:type owl:Class ;
-         rdfs:subClassOf :RealOrEnvisioned ;
-         rdfs:comment "A real-world or envisioned context for the system under investigation; i.e. the conditions at the system boundary at each instant during the observation period."@en .
+###  https://purl.org/sms-ontology#SolverSettingDefault
+sms:SolverSettingDefault rdf:type owl:Class ;
+                         rdfs:subClassOf sms:SolverSettingNonFree ;
+                         rdfs:comment "A solver setting that is set to a valid value by default."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#Model
-:Model rdf:type owl:Class ;
-       rdfs:subClassOf :Virtual ;
-       rdfs:comment "An unambiguous representation of knowlegde about some aspects of a class of systems."@en .
+###  https://purl.org/sms-ontology#SolverSettingFree
+sms:SolverSettingFree rdf:type owl:Class ;
+                      rdfs:subClassOf sms:SolverSetting ;
+                      owl:disjointWith sms:SolverSettingNonFree ;
+                      rdfs:comment "A solver setting which has no value set yet."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#ModelInput
-:ModelInput rdf:type owl:Class ;
-            rdfs:subClassOf :UserInput ,
-                            :Variable ;
-            rdfs:comment "Exactly one input supplied to a model instance during simulation (corresponds to one element of the input vector u(t) in the state-space-representation)."@en .
+###  https://purl.org/sms-ontology#SolverSettingNonFree
+sms:SolverSettingNonFree rdf:type owl:Class ;
+                         rdfs:subClassOf sms:SolverSetting ,
+                                         sms:UserInput ;
+                         rdfs:comment "A solver setting that is set to a valid value."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#ModelInstance
-:ModelInstance rdf:type owl:Class ;
-               owl:equivalentClass [ owl:intersectionOf ( :Model
-                                                          [ rdf:type owl:Restriction ;
-                                                            owl:onProperty :hasParameter ;
-                                                            owl:allValuesFrom :ModelParameterNonFree
-                                                          ]
-                                                        ) ;
-                                     rdf:type owl:Class
-                                   ] ;
-               rdfs:comment "A unambiguous representation of knowledge about a specific systems;  i.e. a model where all parameters are set."@en .
+###  https://purl.org/sms-ontology#System
+sms:System rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( sms:ClassOfSystems
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty sms:hasProperty ;
+                                                        owl:allValuesFrom sms:SystemPropertyNonFree
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:comment "A specific, real-world or envisioned system; defined by specifying its boundaries."@en ,
+                        "The properties of a specific system are set! For example: the PV system on the roof of my house, consisting of 20 solar panels of type XYZ belongs to the class `System`, whereas any non-specified PV system in general belongs to the class `ClassOfSystem`."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#ModelInterface
-:ModelInterface rdf:type owl:Class ;
-                rdfs:subClassOf :Virtual ;
-                rdfs:comment "The interface of a model through which data is exchanged with the outside, i.e. the set of all inputs and outputs."@en .
+###  https://purl.org/sms-ontology#SystemBehaviour
+sms:SystemBehaviour rdf:type owl:Class ;
+                    rdfs:subClassOf sms:RealOrEnvisioned ;
+                    rdfs:comment "The trajectory of the system state for each time instant during the observation period."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#ModelOutput
-:ModelOutput rdf:type owl:Class ;
-             rdfs:subClassOf :Variable ;
-             rdfs:comment "Exactly one input supplied to a model instance during simulation (corresponds to one element of the output vector y(t) in the state-space-representation)."@en .
+###  https://purl.org/sms-ontology#SystemBoundary
+sms:SystemBoundary rdf:type owl:Class ;
+                   rdfs:comment "The boundary that defines a system by distinguishing between what is part of the system and what is not."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#ModelParameter
-:ModelParameter rdf:type owl:Class ;
-                owl:equivalentClass [ rdf:type owl:Class ;
-                                      owl:unionOf ( :ModelParameterFree
-                                                    :ModelParameterNonFree
-                                                  )
-                                    ] ;
-                rdfs:subClassOf :Virtual ;
-                rdfs:comment "A model parameter, corresponding to a system property."@en .
+###  https://purl.org/sms-ontology#SystemProperty
+sms:SystemProperty rdf:type owl:Class ;
+                   owl:equivalentClass [ rdf:type owl:Class ;
+                                         owl:unionOf ( sms:SystemPropertyFree
+                                                       sms:SystemPropertyNonFree
+                                                     )
+                                       ] ;
+                   rdfs:subClassOf sms:RealOrEnvisioned ;
+                   rdfs:comment "A design-time property of a specific real-world or envisioned system, e.g. the value of a resistor of the length of a beam."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#ModelParameterConstraint
-:ModelParameterConstraint rdf:type owl:Class ;
-                          rdfs:subClassOf :Virtual ;
-                          rdfs:comment "A constraint on the possible values that a model parameter can take."@en .
+###  https://purl.org/sms-ontology#SystemPropertyFree
+sms:SystemPropertyFree rdf:type owl:Class ;
+                       rdfs:subClassOf sms:SystemProperty ;
+                       owl:disjointWith sms:SystemPropertyNonFree ;
+                       rdfs:comment "A system property for which no value is set."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#ModelParameterDefault
-:ModelParameterDefault rdf:type owl:Class ;
-                       rdfs:subClassOf :ModelParameterNonFree ;
-                       rdfs:comment "A parameter of a model or model instance that has a valid default value."@en .
+###  https://purl.org/sms-ontology#SystemPropertyNonFree
+sms:SystemPropertyNonFree rdf:type owl:Class ;
+                          rdfs:subClassOf sms:SystemProperty ;
+                          rdfs:comment "A system property that is set to a valid value."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#ModelParameterFree
-:ModelParameterFree rdf:type owl:Class ;
-                    rdfs:subClassOf :ModelParameter ;
-                    owl:disjointWith :ModelParameterNonFree ;
-                    rdfs:comment "A parameter of a model that is not set yet, i.e. has no value."@en .
+###  https://purl.org/sms-ontology#SystemState
+sms:SystemState rdf:type owl:Class ;
+                rdfs:subClassOf sms:RealOrEnvisioned ;
+                rdfs:comment "The state of the system at a specific time instant, i.e. the value of all system quantities at a point in time."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#ModelParameterNonFree
-:ModelParameterNonFree rdf:type owl:Class ;
-                       rdfs:subClassOf :ModelParameter ,
-                                       :UserInput ;
-                       rdfs:comment "A parameter of a model or model instance that has its value set to a valid value."@en .
+###  https://purl.org/sms-ontology#SystemStateFinal
+sms:SystemStateFinal rdf:type owl:Class ;
+                     rdfs:subClassOf sms:SystemState ;
+                     owl:disjointWith sms:SystemStateInitial ;
+                     rdfs:comment "The state of the system at the end of an observation period."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#Quantity
-:Quantity rdf:type owl:Class ;
-          rdfs:subClassOf :RealOrEnvisioned ;
-          rdfs:comment "A specific real-world or envisioned physical quantity that has a value and a unit."@en .
+###  https://purl.org/sms-ontology#SystemStateInitial
+sms:SystemStateInitial rdf:type owl:Class ;
+                       rdfs:subClassOf sms:SystemState ;
+                       rdfs:comment "The state of the system at the very beginning of the observation."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#QuantityKind
-:QuantityKind rdf:type owl:Class ;
-              rdfs:subClassOf :RealOrEnvisioned ;
-              rdfs:comment "A general type of quantity, not related to any specific system or occurence (but to all of them)."@en .
+###  https://purl.org/sms-ontology#UserInput
+sms:UserInput rdf:type owl:Class ;
+              rdfs:subClassOf sms:Virtual .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#QuantityLimit
-:QuantityLimit rdf:type owl:Class ;
-               rdfs:subClassOf :RealOrEnvisioned ;
-               rdfs:comment "A constraint on the value that a quantity can assume, e.g.: a quantity of type mass cannot have a negative value."@en .
+###  https://purl.org/sms-ontology#Variable
+sms:Variable rdf:type owl:Class ;
+             rdfs:subClassOf sms:Virtual ;
+             rdfs:comment "A model variable of a type that has a value changing over time and a constant unit; possibly a representation of a quantity."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#RealOrEnvisioned
-:RealOrEnvisioned rdf:type owl:Class ;
-                  owl:disjointWith :Virtual ;
-                  rdfs:comment "Anything that either exists in the real world or is envisioned as something that exists in the real world."@en .
+###  https://purl.org/sms-ontology#VariableConstraint
+sms:VariableConstraint rdf:type owl:Class ;
+                       rdfs:subClassOf sms:Virtual ;
+                       rdfs:comment "A constraint on a variable, e.g.min/max-assertions that partly define the experimental frame of a model (e.g. \"this equation only holds for a certain temperature range\")."@en .
 
 
-###  https://ontologies.msaas.me/sms-ontology.ttl#Simulation
-:Simulation rdf:type owl:Class ;
-            rdfs:subClassOf :Virtual ;
-            rdfs:comment "A concept for identifying specific simulation runs that, by definition, combines specific initial values, model instance, input vector and solver instance and has a simulation result."@en .
-
-
-###  https://ontologies.msaas.me/sms-ontology.ttl#SimulationResult
-:SimulationResult rdf:type owl:Class ;
-                  rdfs:subClassOf :Virtual ;
-                  rdfs:comment "The result of performing a simulation on a model instance, i.e. the numerical approximation of the behaviour of a system within a context represented by model instance and input vector."@en .
-
-
-###  https://ontologies.msaas.me/sms-ontology.ttl#Solver
-:Solver rdf:type owl:Class ;
-        rdfs:subClassOf :Virtual ;
-        rdfs:comment "An implementation of an algorithm for numerically approximating the solution of a model that can be parameterized, i.e. not all required settings are set."@en .
-
-
-###  https://ontologies.msaas.me/sms-ontology.ttl#SolverInstance
-:SolverInstance rdf:type owl:Class ;
-                owl:equivalentClass [ owl:intersectionOf ( :Solver
-                                                           [ rdf:type owl:Restriction ;
-                                                             owl:onProperty :hasSetting ;
-                                                             owl:allValuesFrom :SolverSettingNonFree
-                                                           ]
-                                                         ) ;
-                                      rdf:type owl:Class
-                                    ] ;
-                rdfs:comment "A solver implementation ready to be executed because all values for all settings are supplied by the user or by means of default values."@en .
-
-
-###  https://ontologies.msaas.me/sms-ontology.ttl#SolverSetting
-:SolverSetting rdf:type owl:Class ;
-               owl:equivalentClass [ rdf:type owl:Class ;
-                                     owl:unionOf ( :SolverSettingFree
-                                                   :SolverSettingNonFree
-                                                 )
-                                   ] ;
-               rdfs:subClassOf :Virtual ;
-               rdfs:comment "A configuration option for a solver, e.g. step size, tolerance, output density, ..."@en .
-
-
-###  https://ontologies.msaas.me/sms-ontology.ttl#SolverSettingDefault
-:SolverSettingDefault rdf:type owl:Class ;
-                      rdfs:subClassOf :SolverSettingNonFree ;
-                      rdfs:comment "A solver setting that is set to a valid value by default."@en .
-
-
-###  https://ontologies.msaas.me/sms-ontology.ttl#SolverSettingFree
-:SolverSettingFree rdf:type owl:Class ;
-                   rdfs:subClassOf :SolverSetting ;
-                   owl:disjointWith :SolverSettingNonFree ;
-                   rdfs:comment "A solver setting which has no value set yet."@en .
-
-
-###  https://ontologies.msaas.me/sms-ontology.ttl#SolverSettingNonFree
-:SolverSettingNonFree rdf:type owl:Class ;
-                      rdfs:subClassOf :SolverSetting ,
-                                      :UserInput ;
-                      rdfs:comment "A solver setting that is set to a valid value."@en .
-
-
-###  https://ontologies.msaas.me/sms-ontology.ttl#System
-:System rdf:type owl:Class ;
-        owl:equivalentClass [ owl:intersectionOf ( :ClassOfSystems
-                                                   [ rdf:type owl:Restriction ;
-                                                     owl:onProperty :hasProperty ;
-                                                     owl:allValuesFrom :SystemPropertyNonFree
-                                                   ]
-                                                 ) ;
-                              rdf:type owl:Class
-                            ] ;
-        rdfs:comment "A specific, real-world or envisioned system; defined by specifying its boundaries."@en ,
-                     "The properties of a specific system are set! For example: the PV system on the roof of my house, consisting of 20 solar panels of type XYZ belongs to the class `System`, whereas any non-specified PV system in general belongs to the class `ClassOfSystem`."@en .
-
-
-###  https://ontologies.msaas.me/sms-ontology.ttl#SystemBehaviour
-:SystemBehaviour rdf:type owl:Class ;
-                 rdfs:subClassOf :RealOrEnvisioned ;
-                 rdfs:comment "The trajectory of the system state for each time instant during the observation period."@en .
-
-
-###  https://ontologies.msaas.me/sms-ontology.ttl#SystemBoundary
-:SystemBoundary rdf:type owl:Class ;
-                rdfs:comment "The boundary that defines a system by distinguishing between what is part of the system and what is not."@en .
-
-
-###  https://ontologies.msaas.me/sms-ontology.ttl#SystemProperty
-:SystemProperty rdf:type owl:Class ;
-                owl:equivalentClass [ rdf:type owl:Class ;
-                                      owl:unionOf ( :SystemPropertyFree
-                                                    :SystemPropertyNonFree
-                                                  )
-                                    ] ;
-                rdfs:subClassOf :RealOrEnvisioned ;
-                rdfs:comment "A design-time property of a specific real-world or envisioned system, e.g. the value of a resistor of the length of a beam."@en .
-
-
-###  https://ontologies.msaas.me/sms-ontology.ttl#SystemPropertyFree
-:SystemPropertyFree rdf:type owl:Class ;
-                    rdfs:subClassOf :SystemProperty ;
-                    owl:disjointWith :SystemPropertyNonFree ;
-                    rdfs:comment "A system property for which no value is set."@en .
-
-
-###  https://ontologies.msaas.me/sms-ontology.ttl#SystemPropertyNonFree
-:SystemPropertyNonFree rdf:type owl:Class ;
-                       rdfs:subClassOf :SystemProperty ;
-                       rdfs:comment "A system property that is set to a valid value."@en .
-
-
-###  https://ontologies.msaas.me/sms-ontology.ttl#SystemState
-:SystemState rdf:type owl:Class ;
-             rdfs:subClassOf :RealOrEnvisioned ;
-             rdfs:comment "The state of the system at a specific time instant, i.e. the value of all system quantities at a point in time."@en .
-
-
-###  https://ontologies.msaas.me/sms-ontology.ttl#SystemStateFinal
-:SystemStateFinal rdf:type owl:Class ;
-                  rdfs:subClassOf :SystemState ;
-                  owl:disjointWith :SystemStateInitial ;
-                  rdfs:comment "The state of the system at the end of an observation period."@en .
-
-
-###  https://ontologies.msaas.me/sms-ontology.ttl#SystemStateInitial
-:SystemStateInitial rdf:type owl:Class ;
-                    rdfs:subClassOf :SystemState ;
-                    rdfs:comment "The state of the system at the very beginning of the observation."@en .
-
-
-###  https://ontologies.msaas.me/sms-ontology.ttl#UserInput
-:UserInput rdf:type owl:Class ;
-           rdfs:subClassOf :Virtual .
-
-
-###  https://ontologies.msaas.me/sms-ontology.ttl#Variable
-:Variable rdf:type owl:Class ;
-          rdfs:subClassOf :Virtual ;
-          rdfs:comment "A model variable of a type that has a value changing over time and a constant unit; possibly a representation of a quantity."@en .
-
-
-###  https://ontologies.msaas.me/sms-ontology.ttl#VariableConstraint
-:VariableConstraint rdf:type owl:Class ;
-                    rdfs:subClassOf :Virtual ;
-                    rdfs:comment "A constraint on a variable, e.g.min/max-assertions that partly define the experimental frame of a model (e.g. \"this equation only holds for a certain temperature range\")."@en .
-
-
-###  https://ontologies.msaas.me/sms-ontology.ttl#Virtual
-:Virtual rdf:type owl:Class ;
-         rdfs:comment "All entities that belong to the domain of modelling and simulation, i.e. everything that is but an abstraction of a real-world or envisioned system."@en .
+###  https://purl.org/sms-ontology#Virtual
+sms:Virtual rdf:type owl:Class ;
+            rdfs:comment "All entities that belong to the domain of modelling and simulation, i.e. everything that is but an abstraction of a real-world or envisioned system."@en .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
