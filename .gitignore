@@ -1,2 +1,11 @@
-# Ignore the local copy of the HermiT reasoner
+# Ignore specific directories
+__pycache__/
+.pytest_cache/
+.vscode/
+local/
+
+# Ignore specific files
+*.code-workspace
+
+# Ignore the local instance of the HermiT reasoner
 HermiT/
