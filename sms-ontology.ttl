@@ -26,6 +26,20 @@
               rdfs:comment "The subject is an approximation of the object."@en .
 
 
+###  https://ontologies.msaas.me/sms-ontology.ttl#calculatedBy
+:calculatedBy rdf:type owl:ObjectProperty ;
+              owl:inverseOf :calculates .
+
+
+###  https://ontologies.msaas.me/sms-ontology.ttl#calculates
+:calculates rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :hasOutput ;
+            rdfs:domain :ModelInstance ;
+            rdfs:range :ModelOutput ;
+            rdfs:comment "A model instance calculates a specific variable"@en .
+
+
+###  https://ontologies.msaas.me/sms-ontology.ttl#compatibleWith
 ###  https://ontologies.msaas.me/sms-ontology.ttl#constrainedBy
 :constrainedBy rdf:type owl:ObjectProperty ;
                owl:inverseOf :constrains ;
