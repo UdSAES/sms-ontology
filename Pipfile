@@ -5,7 +5,7 @@ verify_ssl = true
 
 [dev-packages]
 isort = "*"
-black = "==21.9b0"
+black = "*"
 ipython = "*"
 pydotplus = "*"
 
@@ -18,4 +18,4 @@ pyyaml = "*"
 jinja2 = "*"
 
 [requires]
-python_version = "3.9"
+python_version = "3.10"
