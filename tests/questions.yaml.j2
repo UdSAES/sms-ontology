@@ -83,3 +83,14 @@ competency:
       }
     expected:
       - - "<{{ prefix }}_Solver01_Setting00>"
+
+
+  - question: "7a) Given a quantity, which model output approximates it?"
+    query: |2
+      SELECT ?variable
+      WHERE {
+        <{{ prefix }}_Quantity01> rdf:type sms:CanBeApproximated.
+        <{{ prefix }}_Quantity01> sms:representedBy ?variable.
+      }
+    expected:
+      - - "<{{ prefix }}_Model01_Output01>"
