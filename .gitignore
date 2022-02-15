@@ -6,6 +6,7 @@ local/
 
 # Ignore specific files
 *.code-workspace
+catalog-*.xml
 
 # Ignore the local instance of the HermiT reasoner
 HermiT/
