@@ -40,6 +40,11 @@
 
 
 ###  https://ontologies.msaas.me/sms-ontology.ttl#compatibleWith
+:compatibleWith rdf:type owl:ObjectProperty ,
+                         owl:SymmetricProperty ;
+                rdfs:comment "Two interface variables of two distinct models or model instances can be connected iff they are `compatibleWith` each other."@en .
+
+
 ###  https://ontologies.msaas.me/sms-ontology.ttl#constrainedBy
 :constrainedBy rdf:type owl:ObjectProperty ;
                owl:inverseOf :constrains ;
@@ -319,6 +324,12 @@ o a sms:Variable ."""@en .
                rdfs:comment "A unambiguous representation of knowledge about a specific systems;  i.e. a model where all parameters are set."@en .
 
 
+###  https://ontologies.msaas.me/sms-ontology.ttl#ModelInterface
+:ModelInterface rdf:type owl:Class ;
+                rdfs:subClassOf :Virtual ;
+                rdfs:comment "The interface of a model through which data is exchanged with the outside, i.e. the set of all inputs and outputs."@en .
+
+
 ###  https://ontologies.msaas.me/sms-ontology.ttl#ModelOutput
 :ModelOutput rdf:type owl:Class ;
              rdfs:subClassOf :Variable ;
@@ -466,6 +477,11 @@ o a sms:Variable ."""@en .
 :SystemBehaviour rdf:type owl:Class ;
                  rdfs:subClassOf :RealOrEnvisioned ;
                  rdfs:comment "The trajectory of the system state for each time instant during the observation period."@en .
+
+
+###  https://ontologies.msaas.me/sms-ontology.ttl#SystemBoundary
+:SystemBoundary rdf:type owl:Class ;
+                rdfs:comment "The boundary that defines a system by distinguishing between what is part of the system and what is not."@en .
 
 
 ###  https://ontologies.msaas.me/sms-ontology.ttl#SystemProperty
