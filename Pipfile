@@ -8,6 +8,7 @@ isort = "*"
 black = "*"
 ipython = "*"
 pydotplus = "*"
+reuse = "*"
 
 [packages]
 pytest = "*"
