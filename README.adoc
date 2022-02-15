@@ -7,6 +7,61 @@
 image:https://img.shields.io/badge/code%20style-black-000000.svg[alt=Code style: black, link=https://github.com/psf/black]
 image:https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336[alt=Imports: isort, link=https://timothycrosley.github.io/isort]
 
-Making models, the ability to simulate them, and the simulation results part of the Semantic Web requires an ontology that links the real (or envisioned) world in terms of systems, context, initial state, ... to their abstract representations as model instances, input data, initial conditions et cetera and also captures knowledge about the involved concepts. The ontology developed in this repository does just that.
+Making models, the ability to simulate them, and the simulation results part of the Semantic Web requires an ontology that links the real (or envisioned) world in terms of systems, context, initial state, ... to their abstract representations as model instances, input data, initial conditions et cetera and also captures knowledge about the involved concepts. The link:sms-ontology.ttl[SMS-ontology] developed in this repository does just that.
 
-IMPORTANT: *Recent improvements to code and README/documentation have not been pushed to GitHub yet -- will be fixed as soon as possible*, certainly in calender week 7! (2022-02-13)
+Moreover, the link:sms-fmi.ttl[SMS-/FMI-ontology] captures interrelations of the concepts and roles of the https://github.com/UdSAES/fmi2rdf[FMI-ontology] and the SMS-ontology.
+
+== Installation
+There is no need to install anything if you just want to use the ontologies.
+
+If you want to run the tests and/or contribute, see below.
+
+== Usage
+Use the SMS-ontology to "`talk`" about systems, models and simulations in RDF independent of the modelling formalism used.
+
+If you're using FMI, please have a look at the https://github.com/UdSAES/fmi2rdf[FMI-ontology and `fmi2rdf`-parser]. A reasoner can infer triples in the SMS-namespace from triples in the FMI-namespace via the SMS-/FMI-ontology if desired.
+
+==  Competency Questions
+Competency questions are used to assess whether or not the developed ontology can fulfil its purpose. They are realized as unit tests, written in Python using the https://docs.pytest.org/en/6.2.x/[pytest] framework. Since the competency questions involve instance retrieval, an ABox is needed; it is populated in link:tests/data/individuals.ttl[`tests/data/individuals.ttl`].
+
+Since also the inferences are required for answering some queries, the competency questions are evaluated against a file that also contains all inferences made by Protégé. It is manually exported as link:tests/data/individuals_with_reasoning.ttl[`tests/data/individuals_with_reasoning.ttl`] because Protégé unfortunately has no CLI for this.
+
+Find all competency questions currently supported using the aforementioned individuals in link:tests/questions.yaml.j2[`tests/questions.yaml.j2`].
+
+== Known Issues
+.To be resolved as soon as possible
+* [ ] Revise/complete the SMS-/FMI-ontology
+* [ ] Provide additional example(s)
+* [ ] ...
+
+.To be resolved soonish
+* [ ] Create release (tag, GitHub)
+* [ ] Explore ontology-driven modelling on the base of the FMI- and SMS-ontologies
+* [ ] Capture interrelations with SSN/SOSA?
+* [ ] ...
+
+.To be resolved eventually
+* [ ] Improve score in https://foops.linkeddata.es/FAIR_validator.html[FOOPS!] scanner
+* [ ] ...
+
+
+== Contributing
+Feedback is very welcome! Please open an issue for questions, remarks and bug reports; or open a pull request if you want to improve something.
+
+The code in this repository uses Semantic Versioning (semver) and follows the https://semver.org/spec/v2.0.0.html[semver specification].
+
+
+== Development
+Clone the repository locally. Then, install the dependencies using `pipenv install` and `pipenv install --dev`. Activate the resulting virtual environment with `pipenv shell`. For details, see the dependency specification in  `Pipfile` and the documentation of https://pipenv.pypa.io/en/latest/[`pipenv`].
+
+The Python code is formatted automatically using https://black.readthedocs.io/en/stable/[black] and https://pycqa.github.io/isort/[isort].
+
+.Naming Conventions for Ontology Development
+* CamelCase is used to form names consisting of several words; whitespaces are not allowed
+* Classes/concepts start with a capital letter; the singular form of the concept name is used
+* Role names start with a lowercase letter
+* Role names that indicate a `has` or `is a`-relationship are prefixed using `has` and `is`, respectively
+* `rdfs:comment`-annotations are full sentences that end with a period and have a language annotation
+
+== License
+The ontologies and test code/data are licensed under the https://spdx.org/licenses/MIT.html[MIT License]. This is specified in the format suggested by the https://reuse.software[REUSE SOFTWARE]-initiative. In short: https://spdx.dev/ids/[SPDX IDs] are included in every textual file and the license text can be found in link:LICENSES/[./LICENSES/].
