@@ -13,7 +13,6 @@ import rdflib
 
 
 class TestCompetency(object):
-
     def test_satisfiability(self, hermit, kb):
         """Verify that the knowledge base is satisfiable/consistent (has a model)."""
 
