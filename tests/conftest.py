@@ -62,7 +62,7 @@ def kb(tmp_path, hermit, tbox_rbox):
         content = fp.read()
 
     content = content.replace(
-        f"owl:imports <https://ontologies.msaas.me/sms-ontology.ttl> .",
+        f"owl:imports <https://purl.org/sms-ontology> .",
         f"owl:imports <file://{tbox_rbox}> .",
     )
 
@@ -118,6 +118,6 @@ def graph_empty():
 
     graph.bind("rdf", RDF)
     graph.bind("owl", OWL)
-    graph.bind("sms", rdflib.Namespace("https://ontologies.msaas.me/sms-ontology.ttl#"))
+    graph.bind("sms", rdflib.Namespace("https://purl.org/sms-ontology#"))
 
     return graph
