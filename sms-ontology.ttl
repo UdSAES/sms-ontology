@@ -169,6 +169,12 @@
            rdfs:comment "The subject is a state of a system."@en .
 
 
+###  https://ontologies.msaas.me/sms-ontology.ttl#isValueFor
+:isValueFor rdf:type owl:ObjectProperty ;
+            rdfs:range :Virtual ;
+            rdfs:comment "The subject is the quantity (value, unit) to which the object (an individual/IRI) is set."@en .
+
+
 ###  https://ontologies.msaas.me/sms-ontology.ttl#limitedBy
 :limitedBy rdf:type owl:ObjectProperty ;
            owl:inverseOf :limits ;
@@ -180,6 +186,15 @@
         rdfs:domain :QuantityLimit ;
         rdfs:range :Quantity ;
         rdfs:comment "The subject limits the range of a quantity."@en .
+
+
+###  https://ontologies.msaas.me/sms-ontology.ttl#mappedTo
+:mappedTo rdf:type owl:ObjectProperty ;
+          rdfs:comment """The subject is mapped to the object; e.g.:
+s a sosa:ObservableProperty;
+  sms:mappedTo o .
+
+o a sms:Variable ."""@en .
 
 
 ###  https://ontologies.msaas.me/sms-ontology.ttl#realizedBy
