@@ -180,6 +180,12 @@ sms:instantiatedBy rdf:type owl:ObjectProperty ;
                    rdfs:comment "The subject is instantiated by the object."@en .
 
 
+###  https://purl.org/sms-ontology#instantiationShape
+sms:instantiationShape rdf:type owl:ObjectProperty ;
+                       rdfs:domain sms:Model ;
+                       rdfs:comment "The object specifies constraints on which data is required to instantiate the subject (a model)."@en .
+
+
 ###  https://purl.org/sms-ontology#isInputOf
 sms:isInputOf rdf:type owl:ObjectProperty ;
               rdfs:comment "The subject is an input to the object."@en .
@@ -310,6 +316,11 @@ sms:simulates rdf:type owl:ObjectProperty ;
               rdfs:domain sms:Simulation ;
               rdfs:range sms:ModelInstance ;
               rdfs:comment "The subject simulates the object."@en .
+
+
+###  https://purl.org/sms-ontology#simulationShape
+sms:simulationShape rdf:type owl:ObjectProperty ;
+                    rdfs:comment "The object specifies constraints on which data is required to simulate the subject (a model instance)."@en .
 
 
 #################################################################
