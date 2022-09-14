@@ -17,7 +17,7 @@
                                  dct:title "SMS-Ontology"@en ;
                                  vann:preferredNamespacePrefix "sms" ;
                                  vann:preferredNamespaceUri "https://purl.org/sms-ontology#" ;
-                                 owl:versionInfo "0.1.0-beta.1" .
+                                 owl:versionInfo "0.2.0-beta.1" .
 
 #################################################################
 #    Annotation properties
